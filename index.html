@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Academic portfolio of A. S. M. Jahir Hossain: remote sensing, machine learning and intelligent systems.">
+  <title>A. S. M. Jahir Hossain | Academic Portfolio</title>
+  <script>
+    (() => {
+      const saved = localStorage.getItem("jahir-portfolio-theme");
+      const theme = saved || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.dataset.theme = theme;
+    })();
+  </script>
+  <style>
+    :root{color-scheme:light;--ink:#172431;--navy:#243b53;--muted:#65788a;--line:#d7dde1;--paper:#fbfbf9;--wash:#f1f5f4;--accent:#176b70;--sand:#c58c4d}
+    [data-theme="dark"]{color-scheme:dark;--ink:#e7ecee;--navy:#e7edef;--muted:#a5b4bd;--line:#39505a;--paper:#12202a;--wash:#1c2d37;--accent:#83d0ca;--sand:#dca767}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Arial,Helvetica,sans-serif}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.shell{width:min(1160px,88vw);margin:auto}
+    header{border-top:7px solid var(--accent);padding:24px 0 0}.masthead{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:22px;border-bottom:1px solid var(--line)}.name{font:700 1.12rem/1 Georgia,"Times New Roman",serif;letter-spacing:.015em;color:var(--navy)}.name span{display:block;font:11px/1.6 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}.nav-tools,.links{display:flex;align-items:center}.nav-tools{gap:20px}.links{gap:20px;font-size:13px;color:var(--muted)}.links a{color:inherit}.theme-toggle{width:36px;height:29px;border:1px solid var(--line);border-radius:2px;background:transparent;color:var(--accent);font-size:15px;cursor:pointer;line-height:1;transition:background .2s,color .2s,border-color .2s}.theme-toggle:hover{background:var(--wash);border-color:var(--accent)}
+    .intro{display:grid;grid-template-columns:1.35fr .65fr;gap:8vw;padding:86px 0 78px}.eyebrow,.label{font-size:11px;line-height:1.4;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:var(--accent);margin:0 0 17px}.intro h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;color:var(--navy)}.intro h1{font-size:clamp(2.55rem,5vw,4.55rem);letter-spacing:-.045em;line-height:1.04;margin:0 0 27px;max-width:720px}.intro p{margin:0;max-width:720px;color:#415262;font-size:18px}.identity{align-self:end;border-left:2px solid var(--sand);padding:4px 0 4px 20px;color:var(--muted);font-size:14px}.identity b{display:block;color:var(--ink);font-size:15px;margin-bottom:8px}.identity p{font-size:14px;margin:0 0 12px}
+    .research-note{background:#243b53;color:#edf4f5}.research-note .shell{padding:26px 0;display:grid;grid-template-columns:180px 1fr;gap:34px}.research-note .label{color:#9cd7d4;margin:4px 0}.research-note p{margin:0;font-size:14px;line-height:1.7}.section{padding:86px 0;border-bottom:1px solid var(--line)}.section-grid{display:grid;grid-template-columns:180px 1fr;gap:34px}.section h2{font-size:clamp(2rem,3.2vw,3rem);line-height:1.1;letter-spacing:-.035em;margin:0 0 22px}.section h3{font:700 1.05rem/1.35 Arial,Helvetica,sans-serif;margin:0 0 6px;color:var(--navy)}.prose{max-width:760px;color:#415262}.prose p{margin:0 0 15px}
+    .projects{border-top:1px solid var(--line);margin-top:35px}.project{display:grid;grid-template-columns:70px minmax(0,1fr);gap:18px;padding:28px 0;border-bottom:1px solid var(--line)}.project-num{font:12px/1.4 "Courier New",monospace;color:var(--accent);padding-top:3px}.project p{margin:0;color:#526170;font-size:15px;max-width:720px}.tags{margin-top:13px;display:flex;flex-wrap:wrap;gap:6px}.tags span{border:1px solid #ccd7d7;color:#4d6268;font-size:11px;line-height:1;padding:6px 8px;border-radius:2px}
+    .publication{padding:28px 30px;background:var(--wash);border-left:3px solid var(--accent);max-width:800px}.publication h3{margin-bottom:9px}.citation{font-family:Georgia,"Times New Roman",serif;font-size:15px;color:#445563;margin:0 0 12px}.doi{font-size:13px;word-break:break-word}.results{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:21px}.result{border-top:1px solid #bbc8c8;padding-top:11px;font-size:13px;color:#4b5e69}.result b{font-size:20px;font-weight:400;color:var(--accent);display:block;margin-bottom:1px}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:42px}.list{margin:0;padding:0;list-style:none}.list li{padding:13px 0;border-top:1px solid var(--line);font-size:14px;color:#455867}.list b{display:block;color:var(--ink);font-size:15px}.education{padding:20px 0 0;border-top:1px solid var(--line)}.education h3{font-family:Georgia,"Times New Roman",serif;font-size:1.4rem;font-weight:400}.education p{margin:0;color:var(--muted);font-size:14px}
+    footer{background:#202f3d;color:#d6e0e4;padding:49px 0 28px}footer .shell{display:flex;justify-content:space-between;gap:30px;align-items:end}footer h2{color:#fff;font-size:clamp(1.8rem,3vw,2.65rem);margin:0 0 8px;line-height:1.15}footer p{margin:0;font-size:14px}footer a{color:#a9ddd8;font-size:15px}.copyright{font-size:11px!important;color:#9fadb6;margin-top:28px!important}
+    [data-theme="dark"] .intro p,[data-theme="dark"] .prose,[data-theme="dark"] .project p,[data-theme="dark"] .citation,[data-theme="dark"] .result,[data-theme="dark"] .list li,[data-theme="dark"] .education p{color:#bfccd2}[data-theme="dark"] .tags span{border-color:#4e6670;color:#c0d0d4}[data-theme="dark"] .research-note{background:#0d1720}[data-theme="dark"] footer{background:#0a131b}[data-theme="dark"] .copyright{color:#899ba5}
+    @media(max-width:720px){.shell{width:min(88vw,620px)}.masthead{display:block}.nav-tools{margin-top:16px;justify-content:space-between}.links{gap:14px;flex-wrap:wrap}.intro,.section-grid,.research-note .shell,.two-col{grid-template-columns:1fr;gap:23px}.intro{padding:58px 0}.identity{border-left:0;border-top:2px solid var(--sand);padding:16px 0 0}.section{padding:60px 0}.results{grid-template-columns:1fr}.project{grid-template-columns:42px 1fr}.publication{padding:22px}footer .shell{display:block}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell masthead">
+      <div class="name">A. S. M. Jahir Hossain<span>Academic portfolio</span></div>
+      <div class="nav-tools"><nav class="links" aria-label="Main navigation"><a href="#research">Research</a><a href="#publication">Publication</a><a href="#background">Background</a><a href="mailto:hossainzahir2009@gmail.com">Contact</a></nav><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">◐</button></div>
+    </div>
+    <div class="shell intro">
+      <div>
+        <p class="eyebrow">Electrical and Electronic Engineering</p>
+        <h1>Machine learning and sensing for evidence-based systems.</h1>
+        <p>I work on computational approaches that combine physical measurements, remote-sensing data and machine learning. My interests include agricultural monitoring, computer vision, time-series modelling and reliable evaluation of intelligent systems.</p>
+      </div>
+      <aside class="identity">
+        <b>Research interests</b>
+        <p>Artificial intelligence and machine learning<br>Remote sensing and computer vision<br>Time-series modelling<br>Intelligent sensing and automation</p>
+        <a href="mailto:hossainzahir2009@gmail.com">hossainzahir2009@gmail.com ↗</a>
+      </aside>
+    </div>
+  </header>
+  <aside class="research-note">
+    <div class="shell"><p class="label">Current focus</p><p>Developing a multitemporal crop-type segmentation workflow in Python and PyTorch, with held-out evaluation, reproducible training and class-balanced performance analysis.</p></div>
+  </aside>
+  <main>
+    <section class="section" id="research">
+      <div class="shell section-grid">
+        <p class="label">01 / Research</p>
+        <div><h2>Selected research projects</h2><div class="projects">
+          <article class="project"><div class="project-num">01</div><div><h3>Agricultural analysis and crop-yield prediction of Habiganj</h3><p>Contributed to a study combining Landsat-8 multispectral imagery, remote-sensing indices, NASA Giovanni precipitation data and Bangladesh Bureau of Statistics crop-production data. The work compared K-means and Mask R-CNN for vegetation mapping; linear and Random Forest regression for yield prediction; and ARIMA and LSTM for forecasting.</p><div class="tags"><span>Remote sensing</span><span>Mask R-CNN</span><span>Random Forest</span><span>ARIMA</span><span>LSTM</span></div></div></article>
+          <article class="project"><div class="project-num">02</div><div><h3>Multitemporal crop-type segmentation</h3><p>Ongoing research project using Python and PyTorch to study crop segmentation from imagery acquired across time. The workflow emphasises reproducible experiments, evaluation on held-out data and performance reporting across classes.</p><div class="tags"><span>PyTorch</span><span>Computer vision</span><span>Time series</span><span>Reproducibility</span></div></div></article>
+          <article class="project"><div class="project-num">03</div><div><h3>Sensing, control and automation projects</h3><p>Academic engineering projects involving environmental monitoring, sensors, microcontrollers, robotics and control systems, including a weather and environmental monitoring system for an agricultural setting.</p><div class="tags"><span>Sensors</span><span>Microcontrollers</span><span>Robotics</span><span>Control systems</span></div></div></article>
+        </div></div>
+      </div>
+    </section>
+    <section class="section" id="publication">
+      <div class="shell section-grid"><p class="label">02 / Publication</p><div><h2>Peer-reviewed conference paper</h2>
+        <article class="publication"><h3>Agricultural Analysis and Crop Yield Prediction of Habiganj using Multispectral Bands of Satellite Imagery with Machine Learning</h3><p class="citation">F. Shahrin, L. Zahin, R. Rahman, A. S. M. Jahir Hossain, A. H. Kafi and A. K. M. Abdul Malek Azad. <em>2020 11th International Conference on Electrical and Computer Engineering (ICECE)</em>, pp. 21–24, 2020.</p><a class="doi" href="https://doi.org/10.1109/ICECE51571.2020.9393066">DOI: 10.1109/ICECE51571.2020.9393066 ↗</a>
+          <div class="results"><div class="result"><b>0.0505</b>Reported ARIMA RMSE for NDVI forecasting.</div><div class="result"><b>0.00274</b>Reported LSTM RMSE for soil-moisture forecasting.</div></div>
+        </article>
+      </div></div>
+    </section>
+    <section class="section" id="background">
+      <div class="shell section-grid"><p class="label">03 / Background</p><div class="two-col">
+        <div><h2>Technical practice</h2><ul class="list"><li><b>Programming and analysis</b>Python, C/C++, MATLAB, R, SQL, Bash and Mathematica.</li><li><b>Machine learning</b>PyTorch; regression, Random Forest, Mask R-CNN, LSTM and ARIMA.</li><li><b>Research computing</b>Linux/Unix, Git/GitHub, Docker, LaTeX, HPC clusters and MPI/OpenMP parallelisation.</li></ul></div>
+        <div><h2>Education</h2><div class="education"><h3>B.Sc. in Electrical and Electronic Engineering</h3><p>BRAC University, Dhaka, Bangladesh</p><p style="margin-top:10px">Undergraduate thesis: <em>Agricultural Analysis and Crop Yield Prediction of Habiganj using Multispectral Bands of Satellite Imagery with Machine Learning.</em></p></div><div class="education" style="margin-top:25px"><h3>Languages</h3><p>Bengali (native) · English (C1, IELTS Academic 7.5) · German (A1)</p></div></div>
+      </div></div>
+    </section>
+  </main>
+  <footer id="contact"><div class="shell"><div><h2>Contact</h2><p>For research, technical collaboration or academic correspondence.</p><p class="copyright">© 2026 A. S. M. Jahir Hossain · Dhaka, Bangladesh</p></div><a href="mailto:hossainzahir2009@gmail.com">hossainzahir2009@gmail.com ↗</a></div></footer>
+  <script>
+    const toggle = document.getElementById("theme-toggle");
+    const updateToggle = () => {
+      const dark = document.documentElement.dataset.theme === "dark";
+      toggle.textContent = dark ? "☀" : "◐";
+      toggle.setAttribute("aria-label", dark ? "Switch to light mode" : "Switch to dark mode");
+      toggle.title = toggle.getAttribute("aria-label");
+    };
+    updateToggle();
+    toggle.addEventListener("click", () => {
+      document.documentElement.dataset.theme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+      localStorage.setItem("jahir-portfolio-theme", document.documentElement.dataset.theme);
+      updateToggle();
+    });
+  </script>
+</body>
+</html>
