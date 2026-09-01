@@ -15,24 +15,26 @@
   <style>
     :root{color-scheme:light;--ink:#172431;--navy:#243b53;--muted:#65788a;--line:#d7dde1;--paper:#fbfbf9;--wash:#f1f5f4;--accent:#176b70;--sand:#c58c4d}
     [data-theme="dark"]{color-scheme:dark;--ink:#e7ecee;--navy:#e7edef;--muted:#a5b4bd;--line:#39505a;--paper:#12202a;--wash:#1c2d37;--accent:#83d0ca;--sand:#dca767}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Arial,Helvetica,sans-serif}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.shell{width:min(1160px,88vw);margin:auto}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Arial,Helvetica,sans-serif}a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}a:focus-visible,button:focus-visible{outline:3px solid var(--sand);outline-offset:4px}.shell{width:min(1160px,88vw);margin:auto}.skip-link{position:fixed;z-index:20;left:16px;top:-60px;background:var(--ink);color:var(--paper);padding:10px 14px;font-size:14px}.skip-link:focus{top:16px}
     header{border-top:7px solid var(--accent);padding:24px 0 0}.masthead{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:22px;border-bottom:1px solid var(--line)}.name{font:700 1.12rem/1 Georgia,"Times New Roman",serif;letter-spacing:.015em;color:var(--navy)}.name span{display:block;font:11px/1.6 Arial,Helvetica,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:4px}.nav-tools,.links{display:flex;align-items:center}.nav-tools{gap:20px}.links{gap:20px;font-size:13px;color:var(--muted)}.links a{color:inherit}.theme-toggle{width:36px;height:29px;border:1px solid var(--line);border-radius:2px;background:transparent;color:var(--accent);font-size:15px;cursor:pointer;line-height:1;transition:background .2s,color .2s,border-color .2s}.theme-toggle:hover{background:var(--wash);border-color:var(--accent)}
     .intro{display:grid;grid-template-columns:1.35fr .65fr;gap:7vw;padding:70px 0 66px}.eyebrow,.label{font-size:11px;line-height:1.4;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:var(--accent);margin:0 0 17px}.intro h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:400;color:var(--navy)}.intro h1{font-size:clamp(2.35rem,3.8vw,3.65rem);letter-spacing:-.035em;line-height:1.11;margin:0 0 22px;max-width:760px}.intro p{margin:0;max-width:720px;color:#415262;font-size:16px;line-height:1.72}.identity{align-self:end;border-left:2px solid var(--sand);padding:4px 0 4px 20px;color:var(--muted);font-size:14px}.identity b{display:block;color:var(--ink);font-size:15px;margin-bottom:8px}.identity p{font-size:14px;line-height:1.6;margin:0 0 12px}
-    .research-note{background:#243b53;color:#edf4f5}.research-note .shell{padding:26px 0;display:grid;grid-template-columns:180px 1fr;gap:34px}.research-note .label{color:#9cd7d4;margin:4px 0}.research-note p{margin:0;font-size:14px;line-height:1.7}.section{padding:86px 0;border-bottom:1px solid var(--line)}.section-grid{display:grid;grid-template-columns:180px 1fr;gap:34px}.section h2{font-size:clamp(2rem,3.2vw,3rem);line-height:1.1;letter-spacing:-.035em;margin:0 0 22px}.section h3{font:700 1.05rem/1.35 Arial,Helvetica,sans-serif;margin:0 0 6px;color:var(--navy)}.prose{max-width:760px;color:#415262}.prose p{margin:0 0 15px}
+    .section-nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--paper) 95%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}.section-nav .shell{min-height:47px;display:flex;align-items:center;gap:22px;overflow-x:auto}.section-nav a{white-space:nowrap;font-size:12px;color:var(--muted)}.section-nav a:hover{color:var(--accent);text-decoration:none}.research-note{background:#243b53;color:#edf4f5}.research-note .shell{padding:26px 0;display:grid;grid-template-columns:180px 1fr;gap:34px}.research-note .label{color:#9cd7d4;margin:4px 0}.research-note p{margin:0;font-size:14px;line-height:1.7}.diagram-section{padding:54px 0;background:var(--wash);border-bottom:1px solid var(--line)}.figure-heading{font:700 14px/1.4 Arial,Helvetica,sans-serif;color:var(--navy);margin:0 0 4px}.figure-caption{font-size:13px;color:var(--muted);margin:0 0 22px}.workflow{margin:0}.workflow svg,.trajectory svg{display:block;width:100%;height:auto;overflow:visible}.diagram-box{fill:var(--paper);stroke:var(--line);stroke-width:1.5}.diagram-index{font:700 11px Arial,Helvetica,sans-serif;fill:var(--accent)}.diagram-title{font:700 15px Arial,Helvetica,sans-serif;fill:var(--navy)}.diagram-copy{font:13px Arial,Helvetica,sans-serif;fill:var(--muted)}.diagram-line{stroke:var(--sand);stroke-width:1.5;marker-end:url(#arrow)}.diagram-node{fill:var(--accent);stroke:var(--paper);stroke-width:3}.trajectory{margin:35px 0 0;padding-top:25px;border-top:1px solid var(--line)}.trajectory figcaption{font-size:13px;color:var(--muted);margin-bottom:16px}.section{padding:86px 0;border-bottom:1px solid var(--line);scroll-margin-top:58px}.section-grid{display:grid;grid-template-columns:180px 1fr;gap:34px}.section h2{font-size:clamp(2rem,3.2vw,3rem);line-height:1.1;letter-spacing:-.035em;margin:0 0 22px}.section h3{font:700 1.05rem/1.35 Arial,Helvetica,sans-serif;margin:0 0 6px;color:var(--navy)}.prose{max-width:760px;color:#415262}.prose p{margin:0 0 15px}
     .projects{border-top:1px solid var(--line);margin-top:35px}.project{display:grid;grid-template-columns:70px minmax(0,1fr);gap:18px;padding:28px 0;border-bottom:1px solid var(--line)}.project-num{font:12px/1.4 "Courier New",monospace;color:var(--accent);padding-top:3px}.project p{margin:0;color:#526170;font-size:15px;max-width:720px}.tags{margin-top:13px;display:flex;flex-wrap:wrap;gap:6px}.tags span{border:1px solid #ccd7d7;color:#4d6268;font-size:11px;line-height:1;padding:6px 8px;border-radius:2px}
     .publication{padding:28px 30px;background:var(--wash);border-left:3px solid var(--accent);max-width:800px}.publication h3{margin-bottom:9px}.citation{font-family:Georgia,"Times New Roman",serif;font-size:15px;color:#445563;margin:0 0 12px}.doi{font-size:13px;word-break:break-word}.results{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:21px}.result{border-top:1px solid #bbc8c8;padding-top:11px;font-size:13px;color:#4b5e69}.result b{font-size:20px;font-weight:400;color:var(--accent);display:block;margin-bottom:1px}
     .graduate{background:var(--wash);border-bottom:1px solid var(--line);padding:70px 0}.graduate-inner{display:grid;grid-template-columns:180px 1fr;gap:34px}.graduate h2{font-size:clamp(2rem,3vw,2.85rem);line-height:1.1;letter-spacing:-.035em;margin:0 0 16px}.graduate-intro{max-width:780px;color:#475a67;margin:0 0 28px}.goals{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.goal{border-top:2px solid var(--sand);padding:15px 15px 17px;background:var(--paper)}.goal small{display:block;font:11px/1.4 "Courier New",monospace;color:var(--accent);margin-bottom:10px}.goal h3{font:700 15px/1.3 Arial,Helvetica,sans-serif;margin:0 0 8px;color:var(--navy)}.goal p{font-size:13px;line-height:1.55;color:#526370;margin:0}
     .two-col{display:grid;grid-template-columns:1fr 1fr;gap:42px}.list{margin:0;padding:0;list-style:none}.list li{padding:13px 0;border-top:1px solid var(--line);font-size:14px;color:#455867}.list b{display:block;color:var(--ink);font-size:15px}.education{padding:20px 0 0;border-top:1px solid var(--line)}.education h3{font-family:Georgia,"Times New Roman",serif;font-size:1.4rem;font-weight:400}.education p{margin:0;color:var(--muted);font-size:14px}
     footer{background:#202f3d;color:#d6e0e4;padding:49px 0 28px}footer .shell{display:flex;justify-content:space-between;gap:30px;align-items:end}footer h2{color:#fff;font-size:clamp(1.8rem,3vw,2.65rem);margin:0 0 8px;line-height:1.15}footer p{margin:0;font-size:14px}footer a{color:#a9ddd8;font-size:15px}.copyright{font-size:11px!important;color:#9fadb6;margin-top:28px!important}
-    [data-theme="dark"] .intro p,[data-theme="dark"] .prose,[data-theme="dark"] .project p,[data-theme="dark"] .citation,[data-theme="dark"] .result,[data-theme="dark"] .list li,[data-theme="dark"] .education p,[data-theme="dark"] .graduate-intro,[data-theme="dark"] .goal p{color:#bfccd2}[data-theme="dark"] .tags span{border-color:#4e6670;color:#c0d0d4}[data-theme="dark"] .research-note{background:#0d1720}[data-theme="dark"] .goal{background:#172832}[data-theme="dark"] footer{background:#0a131b}[data-theme="dark"] .copyright{color:#899ba5}
-    @media(max-width:720px){.shell{width:min(88vw,620px)}.masthead{display:block}.nav-tools{margin-top:16px;justify-content:space-between}.links{gap:14px;flex-wrap:wrap}.intro,.section-grid,.research-note .shell,.graduate-inner,.two-col{grid-template-columns:1fr;gap:23px}.intro{padding:58px 0}.identity{border-left:0;border-top:2px solid var(--sand);padding:16px 0 0}.graduate{padding:55px 0}.goals{grid-template-columns:1fr}.section{padding:60px 0}.results{grid-template-columns:1fr}.project{grid-template-columns:42px 1fr}.publication{padding:22px}footer .shell{display:block}}
+    [data-theme="dark"] .intro p,[data-theme="dark"] .prose,[data-theme="dark"] .project p,[data-theme="dark"] .citation,[data-theme="dark"] .result,[data-theme="dark"] .list li,[data-theme="dark"] .education p,[data-theme="dark"] .graduate-intro,[data-theme="dark"] .goal p{color:#bfccd2}[data-theme="dark"] .tags span{border-color:#4e6670;color:#c0d0d4}[data-theme="dark"] .research-note{background:#0d1720}[data-theme="dark"] .section-nav{background:color-mix(in srgb,var(--paper) 94%,transparent)}[data-theme="dark"] .goal{background:#172832}[data-theme="dark"] footer{background:#0a131b}[data-theme="dark"] .copyright{color:#899ba5}
+    @media(max-width:720px){.shell{width:min(88vw,620px)}.masthead{display:block}.nav-tools{margin-top:16px;justify-content:space-between}.links{gap:14px;flex-wrap:wrap}.section-nav .shell{gap:17px}.intro,.section-grid,.research-note .shell,.graduate-inner,.two-col{grid-template-columns:1fr;gap:23px}.intro{padding:58px 0}.identity{border-left:0;border-top:2px solid var(--sand);padding:16px 0 0}.diagram-section{padding:40px 0}.workflow svg{min-width:720px}.workflow{overflow-x:auto;padding-bottom:10px}.graduate{padding:55px 0}.goals{grid-template-columns:1fr}.section{padding:60px 0}.results{grid-template-columns:1fr}.project{grid-template-columns:42px 1fr}.publication{padding:22px}footer .shell{display:block}}
+    @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header>
     <div class="shell masthead">
       <div class="name">A. S. M. Jahir Hossain<span>Academic portfolio</span></div>
-      <div class="nav-tools"><nav class="links" aria-label="Main navigation"><a href="#research">Research</a><a href="#publication">Publication</a><a href="#background">Background</a><a href="mailto:hossainzahir2009@gmail.com">Contact</a></nav><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">◐</button></div>
+      <div class="nav-tools"><nav class="links" aria-label="Main navigation"><a href="#graduate-objectives">Graduate direction</a><a href="#research">Research</a><a href="#publication">Publication</a><a href="#background">Background</a><a href="mailto:hossainzahir2009@gmail.com">Contact</a></nav><button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">◐</button></div>
     </div>
     <div class="shell intro">
       <div>
@@ -42,18 +44,87 @@
       </div>
       <aside class="identity">
         <b>Graduate study interests</b>
-        <p>Master’s: machine learning, sensing and automation<br>Remote sensing and computer vision<br>Time-series modelling and signal analysis<br>Long-term: reliable intelligent systems research</p>
+        <p>Master's: machine learning, sensing and automation<br>Remote sensing and computer vision<br>Time-series modelling and signal analysis<br>Long-term: reliable intelligent systems research</p>
         <a href="mailto:hossainzahir2009@gmail.com">hossainzahir2009@gmail.com ↗</a>
       </aside>
     </div>
   </header>
+  <nav class="section-nav" aria-label="Section navigation"><div class="shell"><a href="#graduate-objectives">Graduate direction</a><a href="#research">Research projects</a><a href="#publication">Publication</a><a href="#background">Technical background</a><a href="#contact">Contact</a></div></nav>
   <aside class="research-note">
     <div class="shell"><p class="label">Current research preparation</p><p>Developing a multitemporal crop-type segmentation workflow in Python and PyTorch, with held-out evaluation, reproducible training and class-balanced performance analysis.</p></div>
   </aside>
-  <section class="graduate" id="graduate-objectives">
-    <div class="shell graduate-inner"><p class="label">Graduate trajectory</p><div><h2>From applied engineering projects to a focused research programme.</h2><p class="graduate-intro">At master’s level, I intend to strengthen my foundations in machine learning, sensing and control, signal processing and statistical evaluation. I am especially interested in methods that remain useful when measurements are incomplete, classes are imbalanced or deployment conditions differ from training data. In the longer term, I hope to pursue doctoral research on reliable data-driven systems for environmental, agricultural and infrastructure applications.</p><div class="goals"><article class="goal"><small>01 / Master’s preparation</small><h3>Build rigorous foundations</h3><p>Advance theoretical and practical skills in statistical learning, computer vision, sensing, automation and signal processing.</p></article><article class="goal"><small>02 / Research questions</small><h3>Study reliability in context</h3><p>Examine how temporal information, class imbalance, evaluation design and data quality affect model performance.</p></article><article class="goal"><small>03 / Doctoral direction</small><h3>Develop useful intelligent systems</h3><p>Contribute to research that links learned models with physical measurements and operational decision-making.</p></article></div></div></div>
+
+  <section class="diagram-section" aria-labelledby="workflow-title">
+    <div class="shell">
+      <figure class="workflow">
+        <figcaption>
+          <p class="figure-heading" id="workflow-title">Research workflow</p>
+          <p class="figure-caption">A concise representation of the kind of work this portfolio brings together.</p>
+        </figcaption>
+        <!--
+          FIXED SVG: widened boxes so all text fits inside them.
+          Layout (viewBox 0 0 1160 185, padding 10px each side):
+            Box 01: x=10,  w=268  → right edge 278
+            Arrow:         278 → 318
+            Box 02: x=318, w=210  → right edge 528
+            Arrow:         528 → 568
+            Box 03: x=568, w=248  → right edge 816
+            Arrow:         816 → 856
+            Box 04: x=856, w=224  → right edge 1080  (fits in 1160 with 80px margin right)
+        -->
+        <svg viewBox="0 0 1160 185" role="img" aria-labelledby="workflow-title workflow-description">
+          <desc id="workflow-description">Measurements and remote-sensing observations are analysed with computational methods, evaluated with appropriate validation, and used to support decisions.</desc>
+          <defs>
+            <marker id="arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+              <path d="M0,0 L9,4.5 L0,9 z" fill="#c58c4d"/>
+            </marker>
+          </defs>
+
+          <!-- Arrows -->
+          <path class="diagram-line" d="M278 92H318"/>
+          <path class="diagram-line" d="M528 92H568"/>
+          <path class="diagram-line" d="M816 92H856"/>
+
+          <!-- Box 01 / INPUTS — width 268 -->
+          <g>
+            <rect class="diagram-box" x="10" y="35" width="268" height="114" rx="2"/>
+            <text class="diagram-index" x="30" y="64">01 / INPUTS</text>
+            <text class="diagram-title" x="30" y="93">Measurements &amp; observations</text>
+            <text class="diagram-copy"  x="30" y="119">Satellite imagery · sensors · time series</text>
+          </g>
+
+          <!-- Box 02 / METHODS — width 210 -->
+          <g>
+            <rect class="diagram-box" x="318" y="35" width="210" height="114" rx="2"/>
+            <text class="diagram-index" x="338" y="64">02 / METHODS</text>
+            <text class="diagram-title" x="338" y="93">Computational modelling</text>
+            <text class="diagram-copy"  x="338" y="119">ML · vision · forecasting</text>
+          </g>
+
+          <!-- Box 03 / EVIDENCE — width 248 -->
+          <g>
+            <rect class="diagram-box" x="568" y="35" width="248" height="114" rx="2"/>
+            <text class="diagram-index" x="588" y="64">03 / EVIDENCE</text>
+            <text class="diagram-title" x="588" y="93">Evaluation &amp; validation</text>
+            <text class="diagram-copy"  x="588" y="119">Baselines · held-out tests</text>
+          </g>
+
+          <!-- Box 04 / USE — width 224 -->
+          <g>
+            <rect class="diagram-box" x="856" y="35" width="224" height="114" rx="2"/>
+            <text class="diagram-index" x="876" y="64">04 / USE</text>
+            <text class="diagram-title" x="876" y="93">Decision support</text>
+            <text class="diagram-copy"  x="876" y="119">Monitoring · planning · response</text>
+          </g>
+        </svg>
+      </figure>
+    </div>
   </section>
-  <main>
+
+  <section class="graduate" id="graduate-objectives">
+    <div class="shell graduate-inner"><p class="label">Graduate trajectory</p><div><h2>From applied engineering projects to a focused research programme.</h2><p class="graduate-intro">At master's level, I intend to strengthen my foundations in machine learning, sensing and control, signal processing and statistical evaluation. I am especially interested in methods that remain useful when measurements are incomplete, classes are imbalanced or deployment conditions differ from training data. In the longer term, I hope to pursue doctoral research on reliable data-driven systems for environmental, agricultural and infrastructure applications.</p><div class="goals"><article class="goal"><small>01 / Master's preparation</small><h3>Build rigorous foundations</h3><p>Advance theoretical and practical skills in statistical learning, computer vision, sensing, automation and signal processing.</p></article><article class="goal"><small>02 / Research questions</small><h3>Study reliability in context</h3><p>Examine how temporal information, class imbalance, evaluation design and data quality affect model performance.</p></article><article class="goal"><small>03 / Doctoral direction</small><h3>Develop useful intelligent systems</h3><p>Contribute to research that links learned models with physical measurements and operational decision-making.</p></article></div><figure class="trajectory"><figcaption>Graduate research trajectory: using completed and current work as preparation for progressively more independent research.</figcaption><svg viewBox="0 0 880 105" role="img" aria-label="Graduate research trajectory from undergraduate research through master's training toward doctoral research"><defs><marker id="trajectory-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="#c58c4d"/></marker></defs><path class="diagram-line" style="marker-end:url(#trajectory-arrow)" d="M225 51H365"/><path class="diagram-line" style="marker-end:url(#trajectory-arrow)" d="M515 51H655"/><circle class="diagram-node" cx="160" cy="51" r="13"/><circle class="diagram-node" cx="450" cy="51" r="13"/><circle class="diagram-node" cx="740" cy="51" r="13"/><text class="diagram-title" x="160" y="21" text-anchor="middle">Research experience</text><text class="diagram-copy" x="160" y="84" text-anchor="middle">thesis · publication · projects</text><text class="diagram-title" x="450" y="21" text-anchor="middle">Master's training</text><text class="diagram-copy" x="450" y="84" text-anchor="middle">methods · supervision · evaluation</text><text class="diagram-title" x="740" y="21" text-anchor="middle">Doctoral research</text><text class="diagram-copy" x="740" y="84" text-anchor="middle">independent questions · contribution</text></svg></figure></div></div>
+  </section>
+  <main id="main-content" tabindex="-1">
     <section class="section" id="research">
       <div class="shell section-grid">
         <p class="label">01 / Research</p>
