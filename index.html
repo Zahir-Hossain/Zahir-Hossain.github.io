@@ -139,13 +139,11 @@
   .imgs img{width:100%;height:100%;object-fit:cover;display:block;}
   .imgs.muted img{filter:grayscale(1) contrast(1.08) brightness(1.05) sepia(0.18);opacity:0.9;}
 
-  .pub{max-width:640px;background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--rule);padding:32px 36px;position:relative;box-shadow:0 12px 28px -16px rgba(40,35,25,0.25);}
-  .pub .paper-layout{display:grid;grid-template-columns:62px 1fr;gap:20px;align-items:start;}
-  .pub .paper-thumb{width:62px;height:82px;background:linear-gradient(180deg,#f1efe8,#c8c4ba);position:relative;box-shadow:0 5px 18px rgba(0,0,0,.18);border:1px solid rgba(0,0,0,.08);}
-  html[data-theme="dark"] .pub .paper-thumb{background:linear-gradient(180deg,#efede7,#c6c2b9);box-shadow:0 6px 20px rgba(0,0,0,.35);}
-  .pub .paper-thumb:before,.pub .paper-thumb:after{content:"";position:absolute;left:10px;right:10px;height:2px;background:#aaa69d;}
-  .pub .paper-thumb:before{top:18px;box-shadow:0 8px 0 #aaa69d,0 16px 0 #b8b3aa,0 24px 0 #c0bbb1;}
-  .pub .paper-thumb:after{bottom:12px;width:23px;right:auto;background:#77736d;}
+  .pub{width:100%;max-width:none;background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--rule);padding:32px 36px;position:relative;box-shadow:0 12px 28px -16px rgba(40,35,25,0.25);}
+  .pub .paper-layout{display:grid;grid-template-columns:70px minmax(0,1fr);gap:24px;align-items:start;}
+  .pub .paper-thumb{width:68px;aspect-ratio:210/270;overflow:hidden;background:#f4f1e9;border:1px solid rgba(0,0,0,.1);box-shadow:0 5px 18px rgba(0,0,0,.18);}
+  html[data-theme="dark"] .pub .paper-thumb{border-color:rgba(255,255,255,.08);box-shadow:0 6px 20px rgba(0,0,0,.35);}
+  .pub .paper-thumb img{width:100%;height:100%;display:block;object-fit:cover;}
   .pub .venue-year{font-size:12px;color:var(--ink-soft);margin:0 0 10px;letter-spacing:0.02em;}
   .pub h3{font-family:"Iowan Old Style",Georgia,serif;font-style:italic;font-size:19px;font-weight:400;line-height:1.5;margin:0 0 10px;}
   .pub .authors{font-size:12.2px;line-height:1.55;color:var(--ink-soft);margin:0 0 14px;}
@@ -180,7 +178,7 @@
     .topnav{flex-direction:column;align-items:flex-start;gap:12px;}
     .topnav nav{gap:14px;}
   }
-  @media (max-width:560px){.pub .paper-layout{grid-template-columns:52px 1fr;gap:16px;}.pub .paper-thumb{width:52px;height:70px;}.pub{padding:26px 24px;}}
+  @media (max-width:560px){.pub .paper-layout{grid-template-columns:56px minmax(0,1fr);gap:16px;}.pub .paper-thumb{width:54px;}.pub{padding:26px 24px;}}
 </style>
 </head>
 <body>
@@ -256,7 +254,7 @@
       <h2 class="section-title">Peer-reviewed conference work from my undergraduate research.</h2>
       <div class="pub">
         <div class="paper-layout">
-          <div class="paper-thumb" aria-hidden="true"></div>
+          <div class="paper-thumb"><img src="assets/thesis-cover-thumb.svg" alt="Thesis title page thumbnail"></div>
           <div class="paper-copy">
             <p class="venue-year">2020 · 11th International Conference on Electrical and Computer Engineering (ICECE)</p>
             <h3>"Agricultural Analysis and Crop Yield Prediction of Habiganj using Multispectral Bands of Satellite Imagery with Machine Learning"</h3>
