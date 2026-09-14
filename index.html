@@ -169,6 +169,10 @@
   }
   .pub .venue-year{font-size:12px;color:var(--ink-soft);margin:0 0 10px;letter-spacing:0.02em;}
   .pub h3{font-family:"Iowan Old Style",Georgia,serif;font-style:italic;font-size:19px;font-weight:400;line-height:1.5;margin:0 0 10px;}
+  .pub .paper-title{display:flex;align-items:flex-start;gap:14px;}
+  .pub .paper-icon{width:27px;height:27px;flex:0 0 27px;margin-top:3px;color:var(--ink-soft);opacity:.72;}
+  .pub .paper-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round;}
+  .pub .paper-title h3{margin:0 0 10px;}
   .pub .authors{font-size:13px;color:var(--ink);margin-bottom:4px;}
   .pub .meta{font-size:12.5px;color:var(--ink-soft);margin-bottom:18px;}
   .pub .links a{font-size:12.5px;text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;margin-right:20px;}
@@ -191,6 +195,7 @@
 
   footer{padding:60px 0 100px;position:relative;}
   footer .name{font-family:"Iowan Old Style",Georgia,serif;font-size:20px;margin:0 0 6px;}
+  footer .alt-name{font-size:11px;letter-spacing:.07em;color:var(--ink-soft);opacity:.72;margin:0 0 20px;}
   footer .role{font-size:12.5px;color:var(--ink-soft);margin-bottom:22px;}
   footer a{font-size:12.5px;text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;margin-right:22px;}
 
@@ -390,7 +395,17 @@
       <h2 class="section-title">Peer-reviewed conference work from my undergraduate research.</h2>
       <div class="pub">
         <p class="venue-year">2020 · 11th International Conference on Electrical and Computer Engineering (ICECE)</p>
-        <h3>"Agricultural Analysis and Crop Yield Prediction of Habiganj using Multispectral Bands of Satellite Imagery with Machine Learning"</h3>
+        <div class="paper-title">
+          <span class="paper-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 3.5h7l4 4v13H7z"/>
+              <path d="M14 3.5v4h4"/>
+              <path d="M9.5 11h6"/>
+              <path d="M9.5 14h6"/>
+            </svg>
+          </span>
+          <h3>"Agricultural Analysis and Crop Yield Prediction of Habiganj using Multispectral Bands of Satellite Imagery with Machine Learning"</h3>
+        </div>
         <p class="authors">A. S. M. Jahir Hossain et al.</p>
         <div class="links">
           <a href="https://doi.org/10.1109/ICECE51571.2020.9393066">DOI ↗</a>
@@ -438,8 +453,8 @@
     </section>
 
     <footer id="contact">
-      <p class="name">    Zahir Hossain</p>
-      <p class="name">[A S M Jahir Hossain]</p>
+      <p class="name">Zahir Hossain</p>
+      <p class="alt-name">A S M Jahir Hossain</p>
       <a href="mailto:hossainzahir2009@gmail.com">Email</a>
       <a href="https://github.com/Zahir-Hossain">GitHub</a>
       <a href="https://bd.linkedin.com/in/jahir-hossain">LinkedIn</a>
