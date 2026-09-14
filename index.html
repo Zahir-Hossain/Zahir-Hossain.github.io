@@ -79,7 +79,6 @@
   .wrap{max-width:900px;margin:0 auto;padding:0 26px;}
   a{color:inherit;}
 
-  /* ===== top sticky nav ===== */
   .topnav{
     position:sticky;top:0;z-index:20;
     display:flex;justify-content:space-between;align-items:center;
@@ -100,15 +99,11 @@
   .icon-link{display:flex;align-items:center;}
   .icon-link svg{width:16px;height:16px;fill:var(--ink-soft);stroke:none;}
   .icon-link:hover svg{fill:var(--ink);}
-  .theme-toggle{
-    background:none;border:none;cursor:pointer;padding:0;
-    display:flex;align-items:center;justify-content:center;
-  }
+  .theme-toggle{background:none;border:none;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;}
   .theme-toggle svg{width:16px;height:16px;stroke:var(--ink-soft);}
   .theme-toggle:hover svg{stroke:var(--ink);}
 
   main{padding:0;}
-
   .hero{padding:44px 0 40px;max-width:900px;position:relative;}
   .hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:stretch;position:relative;}
   .hero-left{max-width:560px;}
@@ -116,39 +111,21 @@
   .hero h1{font-family:"Iowan Old Style",Georgia,serif;font-size:clamp(24px,3vw,29px);font-weight:400;line-height:1.28;margin:0 0 12px;}
   .hero p.lede{font-size:13.3px;color:var(--ink-soft);margin:0 0 22px;line-height:1.58;}
   .hero .cta a{font-size:12.5px;text-decoration:none;margin-right:18px;border-bottom:1px solid var(--ink);padding-bottom:2px;}
-
   .hero-right{position:relative;padding-top:64px;display:flex;flex-direction:column;justify-content:flex-start;}
-  .hero-right .grad-wave{
-    position:absolute;top:-30px;right:-40px;width:340px;height:220px;
-    opacity:0.22;pointer-events:none;z-index:0;
-  }
-  .hero-right .grad-tag{
-    position:relative;z-index:1;
-    font-family:"Iowan Old Style",Georgia,serif;font-size:18px;color:var(--ink);
-    margin:0 0 18px;
-  }
-    .hero .interests{position:relative;z-index:1;display:flex;flex-direction:column;gap:8px;padding:0;list-style:none;margin:0;}
-  .hero .interests li{
-    font-size:11.5px;color:var(--ink-soft);letter-spacing:0.02em;
-    padding-left:14px;position:relative;
-  }
+  .hero-right .grad-wave{position:absolute;top:-30px;right:-40px;width:340px;height:220px;opacity:0.22;pointer-events:none;z-index:0;}
+  .hero-right .grad-tag{position:relative;z-index:1;font-family:"Iowan Old Style",Georgia,serif;font-size:18px;color:var(--ink);margin:0 0 18px;}
+  .hero .interests{position:relative;z-index:1;display:flex;flex-direction:column;gap:8px;padding:0;list-style:none;margin:0;}
+  .hero .interests li{font-size:11.5px;color:var(--ink-soft);letter-spacing:0.02em;padding-left:14px;position:relative;}
   .hero .interests li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:1px;background:var(--ink-soft);}
 
   section{padding:42px 0;border-top:1px solid var(--rule);}
   .section-label{font-size:12px;color:var(--ink-soft);margin:0 0 8px;letter-spacing:0.02em;}
   .section-title{font-family:"Iowan Old Style",Georgia,serif;font-size:20px;font-weight:400;margin:0 0 28px;max-width:600px;line-height:1.4;}
 
-  @media (max-width:760px){
-    .hero-grid{grid-template-columns:1fr;}
-    .hero-right .grad-wave{display:none;}
-  }
+  @media (max-width:760px){.hero-grid{grid-template-columns:1fr;}.hero-right .grad-wave{display:none;}}
 
   .entries{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-  .entry{
-    background:linear-gradient(160deg,var(--panel-2),var(--panel));
-    border:1px solid var(--rule);padding:22px;display:flex;flex-direction:column;
-    box-shadow:0 8px 18px -14px rgba(40,35,25,0.25);
-  }
+  .entry{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--rule);padding:22px;display:flex;flex-direction:column;box-shadow:0 8px 18px -14px rgba(40,35,25,0.25);}
   .entry.wide{grid-column:1/-1;flex-direction:row;gap:30px;align-items:center;}
   .entry .diagram{width:100%;aspect-ratio:16/9;background:var(--bg);border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:inset 0 1px 3px rgba(0,0,0,0.04);}
   .entry.wide .diagram{width:220px;height:150px;aspect-ratio:auto;flex:none;margin-bottom:0;}
@@ -162,19 +139,16 @@
   .imgs img{width:100%;height:100%;object-fit:cover;display:block;}
   .imgs.muted img{filter:grayscale(1) contrast(1.08) brightness(1.05) sepia(0.18);opacity:0.9;}
 
-  .pub{
-    max-width:640px;background:linear-gradient(160deg,var(--panel-2),var(--panel));
-    border:1px solid var(--rule);padding:32px 36px;position:relative;
-    box-shadow:0 12px 28px -16px rgba(40,35,25,0.25);
-  }
+  .pub{max-width:640px;background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--rule);padding:32px 36px;position:relative;box-shadow:0 12px 28px -16px rgba(40,35,25,0.25);}
+  .pub .paper-layout{display:grid;grid-template-columns:62px 1fr;gap:20px;align-items:start;}
+  .pub .paper-thumb{width:62px;height:82px;background:linear-gradient(180deg,#f1efe8,#c8c4ba);position:relative;box-shadow:0 5px 18px rgba(0,0,0,.18);border:1px solid rgba(0,0,0,.08);}
+  html[data-theme="dark"] .pub .paper-thumb{background:linear-gradient(180deg,#efede7,#c6c2b9);box-shadow:0 6px 20px rgba(0,0,0,.35);}
+  .pub .paper-thumb:before,.pub .paper-thumb:after{content:"";position:absolute;left:10px;right:10px;height:2px;background:#aaa69d;}
+  .pub .paper-thumb:before{top:18px;box-shadow:0 8px 0 #aaa69d,0 16px 0 #b8b3aa,0 24px 0 #c0bbb1;}
+  .pub .paper-thumb:after{bottom:12px;width:23px;right:auto;background:#77736d;}
   .pub .venue-year{font-size:12px;color:var(--ink-soft);margin:0 0 10px;letter-spacing:0.02em;}
   .pub h3{font-family:"Iowan Old Style",Georgia,serif;font-style:italic;font-size:19px;font-weight:400;line-height:1.5;margin:0 0 10px;}
-  .pub .paper-title{display:flex;align-items:flex-start;gap:14px;}
-  .pub .paper-icon{width:27px;height:27px;flex:0 0 27px;margin-top:3px;color:var(--ink-soft);opacity:.72;}
-  .pub .paper-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round;}
-  .pub .paper-title h3{margin:0 0 10px;}
-  .pub .authors{font-size:13px;color:var(--ink);margin-bottom:4px;}
-  .pub .meta{font-size:12.5px;color:var(--ink-soft);margin-bottom:18px;}
+  .pub .authors{font-size:12.2px;line-height:1.55;color:var(--ink-soft);margin:0 0 14px;}
   .pub .links a{font-size:12.5px;text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;margin-right:20px;}
 
   .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
@@ -206,6 +180,7 @@
     .topnav{flex-direction:column;align-items:flex-start;gap:12px;}
     .topnav nav{gap:14px;}
   }
+  @media (max-width:560px){.pub .paper-layout{grid-template-columns:52px 1fr;gap:16px;}.pub .paper-thumb{width:52px;height:70px;}.pub{padding:26px 24px;}}
 </style>
 </head>
 <body>
@@ -242,38 +217,18 @@
           <p class="field">Electrical and Electronic Engineering</p>
           <h1>Engineering toward a deeper understanding of physical systems.</h1>
           <p class="lede">My background is in electrical and electronic engineering, with research and project experience in sensing, control, image and time-series analysis, and computational methods. I am seeking graduate training that builds from this foundation toward experimental measurement, scientific instrumentation, and physical science, with particular interest in optical and photonic systems.</p>
-          <div class="cta">
-            <a href="#research">View research</a>
-            <a href="mailto:hossainzahir2009@gmail.com">Contact me</a>
-          </div>
+          <div class="cta"><a href="#research">View research</a><a href="mailto:hossainzahir2009@gmail.com">Contact me</a></div>
         </div>
         <div class="hero-right">
           <svg class="grad-wave" viewBox="0 0 340 220" preserveAspectRatio="none">
-            <defs>
-              <filter id="photonGlow" x="-100%" y="-100%" width="300%" height="300%">
-                <feGaussianBlur stdDeviation="2.2" result="blur"/>
-                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-              </filter>
-            </defs>
-            <path d="M0,150 C50,120 70,180 110,140 C150,100 170,160 210,120 C250,80 270,110 340,40"
-              fill="none" stroke="#938d80" stroke-width="1.3" opacity="0.85"/>
-            <path d="M0,170 C50,150 70,200 110,170 C150,140 170,190 210,160 C250,130 270,150 340,90"
-              fill="none" stroke="#938d80" stroke-width="0.9" opacity="0.7"/>
+            <defs><filter id="photonGlow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="2.2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+            <path d="M0,150 C50,120 70,180 110,140 C150,100 170,160 210,120 C250,80 270,110 340,40" fill="none" stroke="#938d80" stroke-width="1.3" opacity="0.85"/>
+            <path d="M0,170 C50,150 70,200 110,170 C150,140 170,190 210,160 C250,130 270,150 340,90" fill="none" stroke="#938d80" stroke-width="0.9" opacity="0.7"/>
             <circle cx="255" cy="95" r="3.2" fill="#d9a441" filter="url(#photonGlow)"/>
-            <g fill="#938d80">
-              <circle cx="30" cy="60" r="1.4"/><circle cx="90" cy="30" r="1.1"/>
-              <circle cx="150" cy="70" r="1.5"/><circle cx="200" cy="20" r="1.1"/>
-              <circle cx="300" cy="150" r="1.4"/><circle cx="60" cy="190" r="1.1"/>
-            </g>
+            <g fill="#938d80"><circle cx="30" cy="60" r="1.4"/><circle cx="90" cy="30" r="1.1"/><circle cx="150" cy="70" r="1.5"/><circle cx="200" cy="20" r="1.1"/><circle cx="300" cy="150" r="1.4"/><circle cx="60" cy="190" r="1.1"/></g>
           </svg>
           <p class="grad-tag">Graduate Study Interests</p>
-          <ul class="interests">
-            <li>Experimental physics and measurement</li>
-            <li>Optical and photonic systems</li>
-            <li>Scientific instrumentation and sensing</li>
-            <li>Signal and computational analysis of physical measurements</li>
-            <li>Scientific computing</li>
-          </ul>
+          <ul class="interests"><li>Experimental physics and measurement</li><li>Optical and photonic systems</li><li>Scientific instrumentation and sensing</li><li>Signal and computational analysis of physical measurements</li><li>Scientific computing</li></ul>
         </div>
       </div>
     </div>
@@ -281,112 +236,18 @@
     <section id="research">
       <p class="section-label">Selected Research and Projects</p>
       <h2 class="section-title">Published research, computational reproductions, proposed extensions, engineering projects, and ongoing technical work.</h2>
-
       <div class="entries">
-        <div class="entry">
-          <div class="diagram">
-            <svg viewBox="0 0 160 90">
-              <circle cx="55" cy="45" r="30" fill="none" stroke="var(--violet)" stroke-width="1.3"/>
-              <g stroke="var(--violet)" stroke-width="1.1" opacity="0.9">
-                <line x1="105" y1="75" x2="105" y2="55"/><line x1="113" y1="75" x2="113" y2="25"/>
-                <line x1="121" y1="75" x2="121" y2="50"/><line x1="129" y1="75" x2="129" y2="30"/>
-                <line x1="137" y1="75" x2="137" y2="60"/>
-              </g>
-            </svg>
-          </div>
-          <div class="cat">Computational reproduction · Photonics</div>
-          <h3>Breathing Kerr Microcomb Reproduction</h3>
-          <p>Reproduced published MgF₂ stationary and breathing soliton spectra from the authors' open data, then implemented a normalized Lugiato–Lefever model and detuning-stability study.</p>
-          <a class="link" href="https://github.com/Zahir-Hossain/microcomb-breather-reproduction">Project repository ↗</a>
-        </div>
+        <div class="entry"><div class="diagram"><svg viewBox="0 0 160 90"><circle cx="55" cy="45" r="30" fill="none" stroke="var(--violet)" stroke-width="1.3"/><g stroke="var(--violet)" stroke-width="1.1" opacity="0.9"><line x1="105" y1="75" x2="105" y2="55"/><line x1="113" y1="75" x2="113" y2="25"/><line x1="121" y1="75" x2="121" y2="50"/><line x1="129" y1="75" x2="129" y2="30"/><line x1="137" y1="75" x2="137" y2="60"/></g></svg></div><div class="cat">Computational reproduction · Photonics</div><h3>Breathing Kerr Microcomb Reproduction</h3><p>Reproduced published MgF₂ stationary and breathing soliton spectra from the authors' open data, then implemented a normalized Lugiato–Lefever model and detuning-stability study.</p><a class="link" href="https://github.com/Zahir-Hossain/microcomb-breather-reproduction">Project repository ↗</a></div>
 
-        <div class="entry">
-          <div class="diagram">
-            <svg viewBox="0 0 160 90">
-              <path d="M10,75 C55,55 60,25 110,15" fill="none" stroke="var(--ink-soft)" stroke-width="1" opacity="0.5"/>
-              <g fill="var(--ink-soft)"><circle cx="45" cy="55" r="4"/><circle cx="80" cy="28" r="4"/><circle cx="115" cy="45" r="4"/></g>
-            </svg>
-          </div>
-          <div class="cat">Proposed extension + toy simulation · May–June 2026</div>
-          <h3>Prediction- &amp; Uncertainty-Aware Sensor Placement</h3>
-          <p>Toy simulation / very basic experiment. Extended a published stochastic barrier-coverage framework with future-route and uncertainty-aware scenarios, explored via a simplified MATLAB simulation.</p>
-          <a class="link" href="https://github.com/Zahir-Hossain/stochastic-sensor-placement-extension">Project repository ↗</a>
-        </div>
+        <div class="entry"><div class="diagram"><svg viewBox="0 0 160 90"><path d="M10,75 C55,55 60,25 110,15" fill="none" stroke="var(--ink-soft)" stroke-width="1" opacity="0.5"/><g fill="var(--ink-soft)"><circle cx="45" cy="55" r="4"/><circle cx="80" cy="28" r="4"/><circle cx="115" cy="45" r="4"/></g></svg></div><div class="cat">Proposed extension + toy simulation · May–June 2026</div><h3>Prediction- &amp; Uncertainty-Aware Sensor Placement</h3><p>Toy simulation / very basic experiment. Extended a published stochastic barrier-coverage framework with future-route and uncertainty-aware scenarios, explored via a simplified MATLAB simulation.</p><a class="link" href="https://github.com/Zahir-Hossain/stochastic-sensor-placement-extension">Project repository ↗</a></div>
 
-        <div class="entry">
-          <div class="diagram">
-            <svg viewBox="0 0 160 90">
-              <path d="M10,75 Q55,20 80,45 T150,10" fill="none" stroke="var(--amber)" stroke-width="1.5"/>
-              <line x1="10" y1="82" x2="150" y2="82" stroke="var(--rule)" stroke-width="1"/>
-            </svg>
-          </div>
-          <div class="cat">Ongoing project · Reliability</div>
-          <h3>Reliability-Aware Model Evaluation</h3>
-          <p>Studying reliability under distribution shift and whether stronger predictive performance is matched by more dependable confidence-based behaviour.</p>
-          <a class="link" href="https://github.com/Zahir-Hossain/geospatial-ai-reliability">Project repository ↗</a>
-        </div>
+        <div class="entry"><div class="diagram"><svg viewBox="0 0 160 90"><path d="M10,75 Q55,20 80,45 T150,10" fill="none" stroke="var(--amber)" stroke-width="1.5"/><line x1="10" y1="82" x2="150" y2="82" stroke="var(--rule)" stroke-width="1"/></svg></div><div class="cat">Ongoing project · Reliability</div><h3>Reliability-Aware Model Evaluation</h3><p>Studying reliability under distribution shift and whether stronger predictive performance is matched by more dependable confidence-based behaviour.</p><a class="link" href="https://github.com/Zahir-Hossain/geospatial-ai-reliability">Project repository ↗</a></div>
 
-        <div class="entry">
-          <div class="diagram">
-            <svg viewBox="0 0 160 90">
-              <polyline points="10,60 30,50 30,25 55,25 55,70 80,70 80,15 105,15 105,50 130,50 130,38 150,38" fill="none" stroke="#8f8a78" stroke-width="1.2"/>
-              <circle cx="55" cy="25" r="3" fill="var(--ink-soft)"/>
-            </svg>
-          </div>
-          <div class="cat">Engineering project · Sensing</div>
-          <h3>Environmental Monitoring System</h3>
-          <p>Academic engineering work in sensing, microcontrollers, monitoring, and control — practical experience with electronics and system integration.</p>
-        </div>
+        <div class="entry"><div class="diagram"><svg viewBox="0 0 160 90"><polyline points="10,60 30,50 30,25 55,25 55,70 80,70 80,15 105,15 105,50 130,50 130,38 150,38" fill="none" stroke="#8f8a78" stroke-width="1.2"/><circle cx="55" cy="25" r="3" fill="var(--ink-soft)"/></svg></div><div class="cat">Engineering project · Sensing</div><h3>Environmental Monitoring System</h3><p>Academic engineering work in sensing, microcontrollers, monitoring, and control — practical experience with electronics and system integration.</p></div>
 
-        <div class="entry wide">
-          <div class="diagram">
-            <svg viewBox="0 0 220 150">
-              <rect x="0" y="0" width="220" height="150" fill="#e6e1d2"/>
-              <rect x="0" y="0" width="100" height="63" fill="#8f9a6e"/>
-              <rect x="100" y="0" width="120" height="45" fill="#a4ac82"/>
-              <rect x="0" y="63" width="62" height="87" fill="#b4a173"/>
-              <rect x="62" y="63" width="66" height="57" fill="#7c8a6c"/>
-              <rect x="128" y="45" width="92" height="105" fill="#697d5c"/>
-            </svg>
-          </div>
-          <div>
-            <div class="cat">Scientific ML · Semantic segmentation</div>
-            <h3>Multi-Temporal Crop Type Semantic Segmentation</h3>
-            <p>Built a reproducible multi-temporal semantic-segmentation workflow on Sentinel-2 image sequences, comparing an engineered-feature Random Forest baseline with a compact UTAE model. Validation mIoU improved from 0.446 to 0.572; the selected model achieved 0.473 mIoU on the held-out split.</p>
-          </div>
-        </div>
+        <div class="entry wide"><div class="diagram"><svg viewBox="0 0 220 150"><rect x="0" y="0" width="220" height="150" fill="#e6e1d2"/><rect x="0" y="0" width="100" height="63" fill="#8f9a6e"/><rect x="100" y="0" width="120" height="45" fill="#a4ac82"/><rect x="0" y="63" width="62" height="87" fill="#b4a173"/><rect x="62" y="63" width="66" height="57" fill="#7c8a6c"/><rect x="128" y="45" width="92" height="105" fill="#697d5c"/></svg></div><div><div class="cat">Scientific ML · Semantic segmentation</div><h3>Multi-Temporal Crop Type Semantic Segmentation</h3><p>Built a reproducible multi-temporal semantic-segmentation workflow on Sentinel-2 image sequences, comparing an engineered-feature Random Forest baseline with a compact UTAE model. Validation mIoU improved from 0.446 to 0.572; the selected model achieved 0.473 mIoU on the held-out split.</p></div></div>
 
-        <div class="entry wide">
-          <div class="diagram">
-            <svg viewBox="0 0 220 150">
-              <rect x="0" y="0" width="220" height="150" fill="var(--bg)"/>
-              <!-- band stack: Blue / Green / Red / NIR -->
-              <g>
-                <rect x="24" y="30" width="14" height="90" fill="var(--clayblue)" opacity="0.85"/>
-                <rect x="44" y="30" width="14" height="90" fill="var(--sage)" opacity="0.85"/>
-                <rect x="64" y="30" width="14" height="90" fill="#b25b4a" opacity="0.85"/>
-                <rect x="84" y="30" width="14" height="90" fill="var(--amber)" opacity="0.85"/>
-              </g>
-              <g font-family="-apple-system,Arial,sans-serif" font-size="7" fill="var(--ink-soft)">
-                <text x="31" y="128" text-anchor="middle">B</text>
-                <text x="51" y="128" text-anchor="middle">G</text>
-                <text x="71" y="128" text-anchor="middle">R</text>
-                <text x="91" y="128" text-anchor="middle">NIR</text>
-              </g>
-              <!-- reflectance curve -->
-              <polyline points="120,110 138,95 156,70 174,50 196,38" fill="none" stroke="var(--violet)" stroke-width="1.6"/>
-              <g fill="var(--violet)"><circle cx="120" cy="110" r="2"/><circle cx="138" cy="95" r="2"/><circle cx="156" cy="70" r="2"/><circle cx="174" cy="50" r="2"/><circle cx="196" cy="38" r="2"/></g>
-              <line x1="112" y1="120" x2="210" y2="120" stroke="var(--rule)" stroke-width="1"/>
-              <line x1="112" y1="30" x2="112" y2="120" stroke="var(--rule)" stroke-width="1"/>
-            </svg>
-          </div>
-          <div>
-            <div class="cat">Published research · ML application for geo-sat data</div>
-            <h3>Multispectral Data Analysis and Modelling</h3>
-            <p>Peer-reviewed work using multispectral observations, image-analysis methods, regression, and time-series forecasting, with comparative evaluation across multiple modelling approaches.</p>
-            <a class="link" href="#publication">Publication ↗</a>
-          </div>
-        </div>
+        <div class="entry wide"><div class="diagram"><svg viewBox="0 0 220 150"><rect x="0" y="0" width="220" height="150" fill="var(--bg)"/><g><rect x="24" y="30" width="14" height="90" fill="var(--clayblue)" opacity="0.85"/><rect x="44" y="30" width="14" height="90" fill="var(--sage)" opacity="0.85"/><rect x="64" y="30" width="14" height="90" fill="#b25b4a" opacity="0.85"/><rect x="84" y="30" width="14" height="90" fill="var(--amber)" opacity="0.85"/></g><g font-family="-apple-system,Arial,sans-serif" font-size="7" fill="var(--ink-soft)"><text x="31" y="128" text-anchor="middle">B</text><text x="51" y="128" text-anchor="middle">G</text><text x="71" y="128" text-anchor="middle">R</text><text x="91" y="128" text-anchor="middle">NIR</text></g><polyline points="120,110 138,95 156,70 174,50 196,38" fill="none" stroke="var(--violet)" stroke-width="1.6"/><g fill="var(--violet)"><circle cx="120" cy="110" r="2"/><circle cx="138" cy="95" r="2"/><circle cx="156" cy="70" r="2"/><circle cx="174" cy="50" r="2"/><circle cx="196" cy="38" r="2"/></g><line x1="112" y1="120" x2="210" y2="120" stroke="var(--rule)" stroke-width="1"/><line x1="112" y1="30" x2="112" y2="120" stroke="var(--rule)" stroke-width="1"/></svg></div><div><div class="cat">Published research · ML application for geo-sat data</div><h3>Multispectral Data Analysis and Modelling</h3><p>Peer-reviewed work using multispectral observations, image-analysis methods, regression, and time-series forecasting, with comparative evaluation across multiple modelling approaches.</p><a class="link" href="#publication">Publication ↗</a></div></div>
       </div>
     </section>
 
@@ -394,22 +255,14 @@
       <p class="section-label">Publication</p>
       <h2 class="section-title">Peer-reviewed conference work from my undergraduate research.</h2>
       <div class="pub">
-        <p class="venue-year">2020 · 11th International Conference on Electrical and Computer Engineering (ICECE)</p>
-        <div class="paper-title">
-          <span class="paper-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24">
-              <path d="M7 3.5h7l4 4v13H7z"/>
-              <path d="M14 3.5v4h4"/>
-              <path d="M9.5 11h6"/>
-              <path d="M9.5 14h6"/>
-            </svg>
-          </span>
-          <h3>"Agricultural Analysis and Crop Yield Prediction of Habiganj using Multispectral Bands of Satellite Imagery with Machine Learning"</h3>
-        </div>
-        <p class="authors">A. S. M. Jahir Hossain et al.</p>
-        <div class="links">
-          <a href="https://doi.org/10.1109/ICECE51571.2020.9393066">DOI ↗</a>
-          <a href="https://dspace.bracu.ac.bd/items/7ebc33d1-5420-47a2-bc09-f81bcd222cdc">Thesis ↗</a>
+        <div class="paper-layout">
+          <div class="paper-thumb" aria-hidden="true"></div>
+          <div class="paper-copy">
+            <p class="venue-year">2020 · 11th International Conference on Electrical and Computer Engineering (ICECE)</p>
+            <h3>"Agricultural Analysis and Crop Yield Prediction of Habiganj using Multispectral Bands of Satellite Imagery with Machine Learning"</h3>
+            <p class="authors">Fariha Shahrin, Labiba Zahin, Ramisa Rahman, A. S. M. Jahir Hossain, Abdulla Hil Kafi, and A. K. M. Abdul Malek Azad</p>
+            <div class="links"><a href="https://doi.org/10.1109/ICECE51571.2020.9393066">DOI ↗</a><a href="https://dspace.bracu.ac.bd/items/7ebc33d1-5420-47a2-bc09-f81bcd222cdc">Thesis ↗</a></div>
+          </div>
         </div>
       </div>
     </section>
@@ -417,39 +270,19 @@
     <section id="experience">
       <p class="section-label">Experience</p>
       <h2 class="section-title">Research and professional work relevant to scientific computing, machine learning, and AI evaluation.</h2>
-      <div class="exp-grid">
-        <div class="exp-item">
-          <h3 class="role">AI Training &amp; Evaluation</h3>
-          <p class="org">Professional AI training and evaluation work</p>
-          <p>General-purpose and domain-specific AI training and evaluation, including model-response review, reasoning and error analysis, quality assessment, and structured feedback on task-specific performance and model behaviour.</p>
-        </div>
-        <div class="exp-item">
-          <h3 class="role">Student Researcher</h3>
-          <p class="org">LaSSET · BRAC University</p>
-          <p>Worked on multispectral satellite imagery, image analysis, and machine-learning and time-series approaches including Mask R-CNN, Random Forest, and LSTM. Contributed to the peer-reviewed ICECE 2020 publication.</p>
-        </div>
-      </div>
+      <div class="exp-grid"><div class="exp-item"><h3 class="role">AI Training &amp; Evaluation</h3><p class="org">Professional AI training and evaluation work</p><p>General-purpose and domain-specific AI training and evaluation, including model-response review, reasoning and error analysis, quality assessment, and structured feedback on task-specific performance and model behaviour.</p></div><div class="exp-item"><h3 class="role">Student Researcher</h3><p class="org">LaSSET · BRAC University</p><p>Worked on multispectral satellite imagery, image analysis, and machine-learning and time-series approaches including Mask R-CNN, Random Forest, and LSTM. Contributed to the peer-reviewed ICECE 2020 publication.</p></div></div>
     </section>
 
     <section>
       <p class="section-label">Technical Background</p>
       <h2 class="section-title">Tools and areas grounded in coursework, projects, research, and professional work.</h2>
-      <div class="background-grid">
-        <div class="bg-item"><h4>Engineering</h4><p>Circuits, electronics, control, sensing, microcontrollers, monitoring systems, and practical measurement.</p></div>
-        <div class="bg-item"><h4>Scientific Computing</h4><p>Python, MATLAB, NumPy/SciPy, numerical modelling, FFT and signal analysis, image analysis, and time-series workflows.</p></div>
-        <div class="bg-item"><h4>Machine Learning</h4><p>PyTorch, Random Forest, UTAE, Mask R-CNN, LSTM, semantic segmentation, uncertainty and reliability, and model evaluation.</p></div>
-        <div class="bg-item"><h4>Research Workflow</h4><p>Git, GitHub, LaTeX, literature review, reproducible experiments, open-data reproduction, environment tracking, and technical writing.</p></div>
-      </div>
+      <div class="background-grid"><div class="bg-item"><h4>Engineering</h4><p>Circuits, electronics, control, sensing, microcontrollers, monitoring systems, and practical measurement.</p></div><div class="bg-item"><h4>Scientific Computing</h4><p>Python, MATLAB, NumPy/SciPy, numerical modelling, FFT and signal analysis, image analysis, and time-series workflows.</p></div><div class="bg-item"><h4>Machine Learning</h4><p>PyTorch, Random Forest, UTAE, Mask R-CNN, LSTM, semantic segmentation, uncertainty and reliability, and model evaluation.</p></div><div class="bg-item"><h4>Research Workflow</h4><p>Git, GitHub, LaTeX, literature review, reproducible experiments, open-data reproduction, environment tracking, and technical writing.</p></div></div>
     </section>
 
     <section id="direction">
       <p class="section-label">Graduate Direction</p>
       <h2 class="section-title">What I have now, what I want graduate study to develop, and where that could lead.</h2>
-      <div class="direction-list">
-        <div><h4>Existing Foundation</h4><p>Electrical engineering, sensing, control, image and time-series analysis, and computational research.</p></div>
-        <div><h4>Graduate Development</h4><p>Experimental methods, physical measurement, scientific instrumentation, and stronger physics foundations.</p></div>
-        <div><h4>Longer-Term Direction</h4><p>Experimental physical research, with growing interest in optical and photonic systems and advanced scientific instrumentation.</p></div>
-      </div>
+      <div class="direction-list"><div><h4>Existing Foundation</h4><p>Electrical engineering, sensing, control, image and time-series analysis, and computational research.</p></div><div><h4>Graduate Development</h4><p>Experimental methods, physical measurement, scientific instrumentation, and stronger physics foundations.</p></div><div><h4>Longer-Term Direction</h4><p>Experimental physical research, with growing interest in optical and photonic systems and advanced scientific instrumentation.</p></div></div>
     </section>
 
     <footer id="contact">
@@ -459,26 +292,17 @@
       <a href="https://github.com/Zahir-Hossain">GitHub</a>
       <a href="https://bd.linkedin.com/in/jahir-hossain">LinkedIn</a>
     </footer>
-
   </main>
 </div>
-
 <script>
   const root = document.documentElement;
   const btn = document.getElementById('themeToggle');
   const sun = document.getElementById('iconSun');
   const moon = document.getElementById('iconMoon');
-  function apply(theme){
-    if(theme === 'dark'){ root.setAttribute('data-theme','dark'); sun.style.display='none'; moon.style.display='block'; }
-    else { root.removeAttribute('data-theme'); sun.style.display='block'; moon.style.display='none'; }
-  }
+  function apply(theme){if(theme === 'dark'){ root.setAttribute('data-theme','dark'); sun.style.display='none'; moon.style.display='block'; } else { root.removeAttribute('data-theme'); sun.style.display='block'; moon.style.display='none'; }}
   const saved = localStorage.getItem('theme') || 'dark';
   apply(saved);
-  btn.addEventListener('click', () => {
-    const now = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    apply(now);
-    localStorage.setItem('theme', now);
-  });
+  btn.addEventListener('click', () => {const now = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; apply(now); localStorage.setItem('theme', now);});
 </script>
 </body>
 </html>
