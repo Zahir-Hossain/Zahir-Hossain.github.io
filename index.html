@@ -1,83 +1,469 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Academic portfolio of A. S. M. Jahir Hossain — Electrical and Electronic Engineering, research, graduate direction, and selected technical work.">
-<title>A. S. M. Jahir Hossain | Academic Portfolio</title>
+<meta charset="UTF-8">
+<title>C — Daylight Studio</title>
 <style>
-:root{--bg:#070707;--panel:#0a0a0a;--ink:#f0efe9;--muted:#a3a19b;--line:#292929;--line2:#3b3b3b;--accent:#d7b45f}
-*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--bg)}
-body{margin:0;min-height:100vh;position:relative;isolation:isolate;background:#070707;color:var(--ink);font:14px/1.58 Inter,Arial,Helvetica,sans-serif}
-body:after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 68% 18%,rgba(255,255,255,.018),transparent 32%),linear-gradient(180deg,#080808,#070707 58%,#060606)}
-a{color:inherit;text-decoration:none}a:hover{color:#fff}
-.ambient-gif{position:fixed;inset:-2%;z-index:-3;pointer-events:none;overflow:hidden;opacity:.025}.ambient-gif img{width:104%;height:104%;object-fit:cover;display:block;filter:grayscale(1) brightness(.45) contrast(.95);transform:scale(1.015)}
-.shell{width:min(1080px,calc(100vw - 64px));margin:auto}
-.topbar{min-height:62px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #242424}
-.brand{line-height:1}.brand-short{display:block;font:600 13px/1.1 Georgia,"Times New Roman",serif;letter-spacing:.08em;color:#efeee9}.brand-full{display:block;margin-top:5px;color:#73736e;font-size:8.5px;letter-spacing:.075em}
-.top-right{display:flex;align-items:center;gap:17px}.nav{display:flex;gap:21px;color:#aaa8a2;font-size:10px}.nav a{position:relative;padding:22px 0 20px}.nav a:first-child:after{content:"";position:absolute;left:0;right:0;bottom:13px;height:1px;background:#666}
-.social-links{display:flex;align-items:center;gap:8px}.social-link{width:26px;height:26px;display:grid;place-items:center;color:#94948f;opacity:.9;transition:color .18s ease,opacity .18s ease,transform .18s ease}.social-link:hover{color:#dddcd7;opacity:1;transform:translateY(-1px)}.social-link svg{width:14px;height:14px;display:block;fill:currentColor}
-.hero{position:relative;overflow:hidden;display:grid;grid-template-columns:1.08fr .92fr;gap:34px;align-items:stretch;padding:28px 0 32px;border-bottom:1px solid #303030}
-.hero>div:first-of-type,.interest-block{position:relative;z-index:2}.hero-kicker{color:#92928d;font-size:9.5px;letter-spacing:.23em;text-transform:uppercase;margin-bottom:10px}.hero h1{max-width:520px;margin:0;font:400 clamp(1.75rem,2.35vw,2.65rem)/1.045 Georgia,"Times New Roman",serif;letter-spacing:-.035em;color:#f0efe9}.hero p{max-width:600px;margin:13px 0 0;color:#aaa8a2;font-size:12.4px;line-height:1.62}.hero-actions{display:flex;gap:10px;margin-top:16px}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 16px;border:1px solid #363636;background:#0c0c0c;color:#d8d7d2;font-size:10.5px;border-radius:3px}.btn.primary{background:linear-gradient(180deg,#303030,#1a1a1a);border-color:#4a4a4a;color:#f1f0ec;box-shadow:0 3px 12px rgba(0,0,0,.18)}.btn:hover{border-color:#5a5a5a;color:#fff}.btn.primary:hover{background:linear-gradient(180deg,#363636,#1f1f1f);color:#fff}
-.interest-block{align-self:stretch;padding:28px 16px 18px 28px;border-left:1px solid #292929;min-height:235px}.interest-title{font:400 17.5px/1.3 Georgia,"Times New Roman",serif;margin-bottom:14px;color:#e2e0da}.interest-title:after{content:"";display:block;width:32px;height:1px;margin-top:10px;background:#555}.interest-list{list-style:none;padding:0;margin:0;max-width:300px}.interest-list li{display:flex;gap:11px;align-items:flex-start;padding:3px 0;color:#aaa8a2;font-size:10.6px;line-height:1.48}.interest-list li:before{content:"";width:4px;height:4px;flex:0 0 4px;border-radius:50%;background:#858581;margin-top:6px}
-.hero-cosmos{position:absolute;z-index:1;right:-2%;top:2%;width:50%;height:96%;pointer-events:none;opacity:.72}.hero-cosmos svg{width:100%;height:100%;display:block}
-section{padding:34px 0;border-bottom:1px solid var(--line);background:transparent}.section-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:19px}.section-head h2{margin:0;font:400 clamp(1.8rem,2.5vw,2.45rem)/1.06 Georgia,"Times New Roman",serif;letter-spacing:-.03em;color:#e2e0da}.section-head p{margin:0;color:#7f7e79;font-size:10px;max-width:390px;text-align:right}
-.projects{display:grid;grid-template-columns:1fr 1fr;gap:12px}.project-card{min-height:172px;display:grid;grid-template-columns:35% 65%;background:#080808;border:1px solid #303030;overflow:hidden;position:relative;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}.project-card:before{display:none!important}.project-card:hover{border-color:#484848;transform:translateY(-1px);box-shadow:0 8px 26px rgba(0,0,0,.22)}.project-card.wide{grid-column:1/-1;grid-template-columns:28% 72%}.project-visual{min-height:170px;position:relative;overflow:hidden;background:#080808;border-right:1px solid #292929}.project-copy{padding:15px 16px 14px;background:#080808}.project-type{color:#858581;font-size:8.2px;text-transform:uppercase;letter-spacing:.11em;font-weight:700}.project-copy h3{margin:6px 0 7px;font:600 15.5px/1.22 Georgia,"Times New Roman",serif;color:#d5d3cd}.project-copy p{margin:0;color:#9a9994;font-size:10.8px;line-height:1.55}.arrow-link{display:inline-block;margin-top:9px;color:#aaa8a2;font-size:10.5px}.arrow-link:hover{color:#e2e0da}.visual-label{display:none!important}
-.symbol-svg,.station-svg{width:100%;height:100%;display:block;background:#080808}.project-card:not(.satellite) .project-visual svg>rect:first-of-type{fill:#080808!important}.monitoring .project-visual svg>path[fill]:not([fill="none"]){fill:#080808!important}.tile-mosaic{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;transform:scale(1.04)}.tile-mosaic img{width:100%;height:100%;object-fit:cover;display:block;filter:none}
-.paper-row{display:grid;grid-template-columns:64px 1fr auto;gap:17px;align-items:center;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.paper-thumb{width:52px;height:70px;background:#d8d4c9;position:relative;box-shadow:0 4px 16px rgba(0,0,0,.25)}.paper-thumb:before,.paper-thumb:after{content:"";position:absolute;left:9px;right:9px;height:2px;background:#aaa69b}.paper-thumb:before{top:15px;box-shadow:0 7px 0 #aaa69b,0 14px 0 #aaa69b,0 21px 0 #c2beb3}.paper-thumb:after{bottom:10px;width:20px;right:auto;background:#77736b}.paper-meta h3{margin:0 0 5px;font:600 14.5px/1.3 Georgia,serif;color:#d5d3cd}.paper-meta p{margin:0;color:#8f8e89;font-size:10.2px}.paper-actions{display:flex;gap:7px}.mini-btn{padding:7px 10px;border:1px solid #373737;background:#0b0b0b;font-size:9.5px;color:#cbc9c3;border-radius:2px}.mini-btn.primary{background:linear-gradient(180deg,#303030,#1a1a1a);border-color:#4a4a4a;color:#f1f0ec}
-.experience-list{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.experience-item{padding:19px 0;border-bottom:1px solid var(--line)}.experience-item:last-child{border-bottom:0}.experience-role{margin:0;font:600 14.5px/1.28 Georgia,"Times New Roman",serif;color:#d5d3cd}.experience-org{margin-top:3px;color:#aaa8a2;font-size:10.4px}.experience-item p{margin:7px 0 0;max-width:820px;color:#92918c;font-size:10.5px;line-height:1.58}
-.skills{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.skill{padding:18px 18px 19px;border-right:1px solid var(--line)}.skill:last-child{border-right:0}.skill-icon{width:28px;height:28px;border:1px solid #3b3b3b;color:#aaa8a2;display:grid;place-items:center;margin-bottom:10px;font-size:13px}.skill h3{margin:0 0 5px;font-size:11.3px;color:#d5d3cd}.skill p{margin:0;color:#898884;font-size:9.8px;line-height:1.5}
-.direction-wrap{position:relative;padding-top:4px}.direction-wave{width:100%;height:55px;display:block;margin-bottom:-15px;opacity:.48}.direction-wave path:first-child{stroke:#414141!important}.direction-wave path:last-child{stroke:#686868!important}.direction-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;position:relative}.step-dot{width:6px;height:6px;background:#797979;border-radius:50%;margin-bottom:10px}.step h3{margin:0 0 5px;font-size:10.5px;color:#d5d3cd}.step p{margin:0;color:#85847f;font-size:9.8px;max-width:240px}.direction-signature{margin-top:22px;padding-top:11px;border-top:1px solid #262626;font:8.5px/1.4 Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#70706c}
-footer{padding:26px 0;background:#060606}.footer-row{display:flex;justify-content:space-between;align-items:end;gap:20px}.footer-name{font-size:10.5px;font-weight:700;letter-spacing:.08em}.footer-full{font-size:8px;color:#7f7e79;margin-top:4px;letter-spacing:.06em}.footer-sub{font-size:8.5px;color:#7f7e79;margin-top:3px}.footer-links{display:flex;gap:12px;color:#94928d;font-size:9.5px}.credit{margin-top:12px;color:#666560;font-size:7.5px;line-height:1.45}
-@media(max-width:850px){.shell{width:min(760px,calc(100vw - 40px))}.nav{display:none}.top-right{gap:0}.hero{grid-template-columns:1fr;gap:16px;padding:26px 0}.interest-block{border-left:0;border-top:1px solid #292929;padding:20px 0 0;min-height:205px}.hero-cosmos{width:100%;right:-28%;top:40%;height:56%;opacity:.5}.projects{grid-template-columns:1fr}.project-card,.project-card.wide{grid-column:auto;grid-template-columns:35% 65%}.skills{grid-template-columns:1fr 1fr}.skill:nth-child(2){border-right:0}.skill:nth-child(-n+2){border-bottom:1px solid var(--line)}.paper-row{grid-template-columns:56px 1fr}.paper-actions{grid-column:2}}
-@media(max-width:560px){.shell{width:calc(100vw - 32px)}.hero h1{font-size:clamp(1.7rem,8vw,2.2rem)}section{padding:26px 0}.project-card,.project-card.wide{grid-template-columns:1fr}.project-visual{min-height:158px;border-right:0;border-bottom:1px solid var(--line)}.skills{grid-template-columns:1fr}.skill{border-right:0;border-bottom:1px solid var(--line)}.skill:last-child{border-bottom:0}.direction-steps{grid-template-columns:1fr;gap:20px}.direction-wave{display:none}.section-head{display:block}.section-head p{text-align:left;margin-top:6px}.paper-actions{grid-column:1/-1}}
+  :root{
+    --bg:#f1e9d3;
+    --bg-2:#ebe0c1;
+    --panel:#f9f4e5;
+    --panel-2:#f5eeda;
+    --ink:#2b2216;
+    --ink-soft:#6b5c42;
+    --rule:#ddd0ac;
+    --sage:#5b7360;
+    --violet:#7266ab;
+    --amber:#a1702e;
+    --clayblue:#4f6a72;
+  }
+  html[data-theme="dark"]{
+    --bg:#121113;
+    --bg-2:#0c0b0d;
+    --panel:#1a191b;
+    --panel-2:#201f21;
+    --ink:#ece7dc;
+    --ink-soft:#938d80;
+    --rule:#302e2c;
+    --sage:#8ba87f;
+    --violet:#a297df;
+    --amber:#d9a441;
+    --clayblue:#7ba0aa;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;color:var(--ink);font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;line-height:1.5;
+    background:
+      radial-gradient(ellipse 900px 500px at 10% -10%, rgba(114,102,171,0.06), transparent 55%),
+      radial-gradient(ellipse 700px 600px at 100% 10%, rgba(184,133,58,0.07), transparent 55%),
+      var(--bg);
+    background-attachment:fixed;
+    transition:background-color .2s, color .2s;
+    position:relative;
+  }
+  body::before{
+    content:"";position:absolute;top:0;left:0;right:0;bottom:0;z-index:0;pointer-events:none;
+    opacity:0.1;
+    background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIj4KPGZpbHRlciBpZD0ibiI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuNyIgbnVtT2N0YXZlcz0iMyIgc3RpdGNoVGlsZXM9InN0aXRjaCIgcmVzdWx0PSJ0Ii8+CjxmZUNvbG9yTWF0cml4IGluPSJ0IiB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMC41NSAwIDAgMCAwICAwLjQyIDAgMCAwIDAgIDAuMjUgMCAwIDAgMCAgMCAwIDAgMC45IDAiLz48L2ZpbHRlcj4KPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI24pIi8+PC9zdmc+");
+    background-repeat:repeat;
+    background-size:150px 150px;
+    mix-blend-mode:multiply;
+  }
+  body::after{
+    content:"";position:absolute;top:0;left:0;right:0;bottom:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(ellipse 70% 50% at 8% 12%, rgba(120,90,45,0.06), transparent 60%),
+      radial-gradient(ellipse 60% 45% at 92% 85%, rgba(120,90,45,0.05), transparent 60%),
+      radial-gradient(ellipse 55% 40% at 88% 15%, rgba(120,90,45,0.04), transparent 55%),
+      radial-gradient(ellipse 90% 70% at 50% 100%, transparent 50%, rgba(90,70,35,0.08) 100%),
+      radial-gradient(ellipse 90% 70% at 50% 0%, transparent 50%, rgba(90,70,35,0.06) 100%),
+      radial-gradient(ellipse 75% 100% at 0% 50%, transparent 55%, rgba(90,70,35,0.05) 100%),
+      radial-gradient(ellipse 75% 100% at 100% 50%, transparent 55%, rgba(90,70,35,0.05) 100%);
+  }
+  html[data-theme="dark"] body::after{background:none;}
+  html[data-theme="dark"] body::before{
+    opacity:0.9;
+    mix-blend-mode:normal;
+    background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNjAiIGhlaWdodD0iMzYwIj48ZyBmaWxsPSIjY2ZjN2I2IiBvcGFjaXR5PSIwLjg1Ij48Y2lyY2xlIGN4PSIxOTIuNiIgY3k9IjEzMi43IiByPSIwLjY1Ii8+PGNpcmNsZSBjeD0iMTUzLjQiIGN5PSIyOTUuMSIgcj0iMC43MSIvPjxjaXJjbGUgY3g9IjIyNC45IiBjeT0iMzM3LjYiIHI9IjEuMTIiLz48Y2lyY2xlIGN4PSIzNDcuNiIgY3k9IjIwLjQiIHI9IjEuMzciLz48Y2lyY2xlIGN4PSI1NC44IiBjeT0iNDUuNSIgcj0iMC44OCIvPjxjaXJjbGUgY3g9IjY3LjYiIGN5PSIyMDguNyIgcj0iMS4xOCIvPjxjaXJjbGUgY3g9IjE5Ni44IiBjeT0iMjYuMSIgcj0iMC42NSIvPjxjaXJjbGUgY3g9IjI0My41IiBjeT0iMTU0LjUiIHI9IjAuODgiLz48Y2lyY2xlIGN4PSIxNjMuNSIgY3k9IjEwOS41IiByPSIxLjMxIi8+PGNpcmNsZSBjeD0iODkuOSIgY3k9IjIwNi4yIiByPSIxLjA3Ii8+PGNpcmNsZSBjeD0iMTUxLjIiIGN5PSIyNzAuNSIgcj0iMC43NCIvPjxjaXJjbGUgY3g9IjE3LjgiIGN5PSIyMzkuMiIgcj0iMS4yOSIvPjxjaXJjbGUgY3g9IjMxMi4yIiBjeT0iMTE0LjQiIHI9IjEuMjMiLz48Y2lyY2xlIGN4PSIyMDguMSIgY3k9IjE2NC42IiByPSIxLjM2Ii8+PGNpcmNsZSBjeD0iMTcwLjkiIGN5PSIyMzcuOCIgcj0iMC42NSIvPjxjaXJjbGUgY3g9IjIzMS44IiBjeT0iMzUzLjYiIHI9IjEuMzQiLz48Y2lyY2xlIGN4PSIxMzkuOCIgY3k9IjIzOS40IiByPSIwLjYyIi8+PGNpcmNsZSBjeD0iNjMuMiIgY3k9IjQ1LjIiIHI9IjAuNjUiLz48Y2lyY2xlIGN4PSI0OS41IiBjeT0iOTEuMiIgcj0iMC45NSIvPjxjaXJjbGUgY3g9IjMyLjQiIGN5PSIxNjIuMSIgcj0iMS4wOSIvPjxjaXJjbGUgY3g9IjI5Mi40IiBjeT0iMzA4LjEiIHI9IjAuODUiLz48Y2lyY2xlIGN4PSI2Ni4wIiBjeT0iODUuNiIgcj0iMC44MSIvPjxjaXJjbGUgY3g9IjIxMS40IiBjeT0iOTYuNSIgcj0iMC42Ii8+PGNpcmNsZSBjeD0iMTM0LjAiIGN5PSIyMDMuNCIgcj0iMS40NiIvPjxjaXJjbGUgY3g9IjMyMC42IiBjeT0iMjc4LjUiIHI9IjEuMzkiLz48Y2lyY2xlIGN4PSIxNDIuMSIgY3k9IjE0NC40IiByPSIwLjY5Ii8+PGNpcmNsZSBjeD0iMzkuNyIgY3k9IjEzMi4wIiByPSIwLjYyIi8+PGNpcmNsZSBjeD0iMjIwLjIiIGN5PSI1Ni4zIiByPSIwLjgzIi8+PGNpcmNsZSBjeD0iMTMyLjIiIGN5PSI0Ny4yIiByPSIxLjM2Ii8+PGNpcmNsZSBjeD0iMTk1LjIiIGN5PSIxMy41IiByPSIxLjA4Ii8+PGNpcmNsZSBjeD0iMzA3LjkiIGN5PSIyNDkuMSIgcj0iMC44NCIvPjxjaXJjbGUgY3g9IjYyLjgiIGN5PSIyNzUuNyIgcj0iMS4wOCIvPjxjaXJjbGUgY3g9IjEyMC4wIiBjeT0iODIuNSIgcj0iMS4zMyIvPjxjaXJjbGUgY3g9IjMwNC4xIiBjeT0iMjg3LjciIHI9IjEuMzQiLz48Y2lyY2xlIGN4PSIxMy44IiBjeT0iMTAyLjQiIHI9IjAuODMiLz48L2c+PGcgZmlsbD0iI2YyZGJhOCI+PGNpcmNsZSBjeD0iMTE4LjAiIGN5PSI1Ny4xIiByPSIxLjU1Ii8+PGNpcmNsZSBjeD0iMTcuMiIgY3k9IjE1Ni42IiByPSIwLjg2Ii8+PGNpcmNsZSBjeD0iMjYwLjgiIGN5PSIxMDUuNCIgcj0iMS45MiIvPjxjaXJjbGUgY3g9IjEzMC4zIiBjeT0iMzE1LjIiIHI9IjEuOTAiLz48Y2lyY2xlIGN4PSIxODUuNSIgY3k9IjIyMS40IiByPSIxLjU3Ii8+PGNpcmNsZSBjeD0iMjUuOSIgY3k9IjI3LjciIHI9IjEuMDMiLz48Y2lyY2xlIGN4PSIxMjMuNyIgY3k9IjIyLjUiIHI9IjAuNzgiLz48Y2lyY2xlIGN4PSIxNjguMCIgY3k9IjE3NC4zIiByPSIwLjg4Ii8+PGNpcmNsZSBjeD0iMTI0LjYiIGN5PSI5Ny4yIiByPSIxLjc2Ii8+PGNpcmNsZSBjeD0iMTIuMSIgY3k9IjMzOC43IiByPSIxLjQwIi8+PGNpcmNsZSBjeD0iODMuOCIgY3k9IjE4Ni4yIiByPSIxLjIwIi8+PC9nPjwvc3ZnPg==");
+    background-repeat:repeat;
+    background-size:360px 360px;
+  }
+  html[data-theme="dark"] body::before{
+    opacity:0.65;
+    background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNDAiIGhlaWdodD0iMzQwIj48ZyBmaWxsPSIjOTQ4ZDdlIj48Y2lyY2xlIGN4PSIxOCIgY3k9IjQyIiByPSIwLjciLz48Y2lyY2xlIGN4PSI3NiIgY3k9IjEyIiByPSIwLjUiLz48Y2lyY2xlIGN4PSIxMjEiIGN5PSI4OCIgcj0iMC44Ii8+PGNpcmNsZSBjeD0iMTYzIiBjeT0iMzAiIHI9IjAuNSIvPjxjaXJjbGUgY3g9IjIwNSIgY3k9IjEyMCIgcj0iMC42Ii8+PGNpcmNsZSBjeD0iMjUwIiBjeT0iNTUiIHI9IjAuNSIvPjxjaXJjbGUgY3g9IjI4OCIgY3k9Ijk1IiByPSIwLjciLz48Y2lyY2xlIGN4PSIzMjAiIGN5PSIyMCIgcj0iMC41Ii8+PGNpcmNsZSBjeD0iNDAiIGN5PSIxNTAiIHI9IjAuNiIvPjxjaXJjbGUgY3g9Ijk1IiBjeT0iMTkwIiByPSIwLjUiLz48Y2lyY2xlIGN4PSIxNDAiIGN5PSIxNjAiIHI9IjAuNyIvPjxjaXJjbGUgY3g9IjE4NSIgY3k9IjIxMCIgcj0iMC41Ii8+PGNpcmNsZSBjeD0iMjMwIiBjeT0iMTc1IiByPSIwLjYiLz48Y2lyY2xlIGN4PSIyNzAiIGN5PSIyMzAiIHI9IjAuNSIvPjxjaXJjbGUgY3g9IjMwNSIgY3k9IjE5MCIgcj0iMC43Ii8+PGNpcmNsZSBjeD0iMjUiIGN5PSIyNjAiIHI9IjAuNSIvPjxjaXJjbGUgY3g9IjcwIiBjeT0iMzAwIiByPSIwLjYiLz48Y2lyY2xlIGN4PSIxMTUiIGN5PSIyNTAiIHI9IjAuNSIvPjxjaXJjbGUgY3g9IjE2MCIgY3k9IjI5MCIgcj0iMC43Ii8+PGNpcmNsZSBjeD0iMjEwIiBjeT0iMjYwIiByPSIwLjUiLz48Y2lyY2xlIGN4PSIyNTUiIGN5PSIzMTAiIHI9IjAuNiIvPjxjaXJjbGUgY3g9IjMwMCIgY3k9IjI4MCIgcj0iMC41Ii8+PGNpcmNsZSBjeD0iMzMwIiBjeT0iMjUwIiByPSIwLjYiLz48Y2lyY2xlIGN4PSI1NSIgY3k9Ijc1IiByPSIwLjQiLz48Y2lyY2xlIGN4PSIxODAiIGN5PSI0NSIgcj0iMC40Ii8+PGNpcmNsZSBjeD0iMjQ1IiBjeT0iMTQ1IiByPSIwLjQiLz48Y2lyY2xlIGN4PSIxMCIgY3k9IjE5MCIgcj0iMC40Ii8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTIwIiByPSIwLjQiLz48L2c+PC9zdmc+");
+    background-repeat:repeat;
+    background-size:340px 340px;
+  }
+  .topnav, .wrap{position:relative;z-index:1;}
+  .wrap{max-width:900px;margin:0 auto;padding:0 26px;}
+  a{color:inherit;}
+
+  /* ===== top sticky nav ===== */
+  .topnav{
+    position:sticky;top:0;z-index:20;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:14px 26px;
+    background:rgba(242,240,234,0.82);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--rule);
+  }
+  html[data-theme="dark"] .topnav{background:rgba(18,17,19,0.82);}
+  .topnav .name{font-family:"Iowan Old Style",Georgia,serif;font-size:14px;white-space:nowrap;}
+  .topnav nav{display:flex;align-items:center;gap:16px;font-size:11.5px;flex-wrap:wrap;}
+  .topnav nav a{text-decoration:none;color:#5b4636;}
+  .topnav nav a:hover{color:#3f2f22;}
+  html[data-theme="dark"] .topnav nav a{color:#c9ad8b;}
+  html[data-theme="dark"] .topnav nav a:hover{color:#ecd9bc;}
+  .topnav nav .sep{width:1px;height:14px;background:var(--rule);}
+  .icon-link{display:flex;align-items:center;}
+  .icon-link svg{width:16px;height:16px;fill:var(--ink-soft);stroke:none;}
+  .icon-link:hover svg{fill:var(--ink);}
+  .theme-toggle{
+    background:none;border:none;cursor:pointer;padding:0;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .theme-toggle svg{width:16px;height:16px;stroke:var(--ink-soft);}
+  .theme-toggle:hover svg{stroke:var(--ink);}
+
+  main{padding:0;}
+
+  .hero{padding:44px 0 40px;max-width:900px;position:relative;}
+  .hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:stretch;position:relative;}
+  .hero-left{max-width:560px;}
+  .hero .field{font-size:11.5px;color:var(--ink-soft);letter-spacing:0.03em;margin:0 0 14px;}
+  .hero h1{font-family:"Iowan Old Style",Georgia,serif;font-size:clamp(24px,3vw,29px);font-weight:400;line-height:1.28;margin:0 0 12px;}
+  .hero p.lede{font-size:13.3px;color:var(--ink-soft);margin:0 0 22px;line-height:1.58;}
+  .hero .cta a{font-size:12.5px;text-decoration:none;margin-right:18px;border-bottom:1px solid var(--ink);padding-bottom:2px;}
+
+  .hero-right{position:relative;padding-top:64px;display:flex;flex-direction:column;justify-content:flex-start;}
+  .hero-right .grad-wave{
+    position:absolute;top:-30px;right:-40px;width:340px;height:220px;
+    opacity:0.22;pointer-events:none;z-index:0;
+  }
+  .hero-right .grad-tag{
+    position:relative;z-index:1;
+    font-family:"Iowan Old Style",Georgia,serif;font-size:18px;color:var(--ink);
+    margin:0 0 18px;
+  }
+    .hero .interests{position:relative;z-index:1;display:flex;flex-direction:column;gap:8px;padding:0;list-style:none;margin:0;}
+  .hero .interests li{
+    font-size:11.5px;color:var(--ink-soft);letter-spacing:0.02em;
+    padding-left:14px;position:relative;
+  }
+  .hero .interests li::before{content:"";position:absolute;left:0;top:6px;width:5px;height:1px;background:var(--ink-soft);}
+
+  section{padding:42px 0;border-top:1px solid var(--rule);}
+  .section-label{font-size:12px;color:var(--ink-soft);margin:0 0 8px;letter-spacing:0.02em;}
+  .section-title{font-family:"Iowan Old Style",Georgia,serif;font-size:20px;font-weight:400;margin:0 0 28px;max-width:600px;line-height:1.4;}
+
+  @media (max-width:760px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-right .grad-wave{display:none;}
+  }
+
+  .entries{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .entry{
+    background:linear-gradient(160deg,var(--panel-2),var(--panel));
+    border:1px solid var(--rule);padding:22px;display:flex;flex-direction:column;
+    box-shadow:0 8px 18px -14px rgba(40,35,25,0.25);
+  }
+  .entry.wide{grid-column:1/-1;flex-direction:row;gap:30px;align-items:center;}
+  .entry .diagram{width:100%;aspect-ratio:16/9;background:var(--bg);border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:inset 0 1px 3px rgba(0,0,0,0.04);}
+  .entry.wide .diagram{width:220px;height:150px;aspect-ratio:auto;flex:none;margin-bottom:0;}
+  .entry .diagram svg,.entry .diagram .imgs{width:88%;height:88%;}
+  .entry.wide .diagram svg,.entry.wide .diagram .imgs{width:100%;height:100%;}
+  .entry .cat{font-size:11.5px;color:var(--ink-soft);margin-bottom:8px;}
+  .entry h3{font-family:"Iowan Old Style",Georgia,serif;font-size:16.5px;font-weight:400;margin:0 0 8px;}
+  .entry p{font-size:12.3px;line-height:1.58;color:var(--ink-soft);margin:0 0 10px;}
+  .entry a.link{font-size:12.5px;text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;align-self:flex-start;}
+  .imgs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);width:100%;height:100%;}
+  .imgs img{width:100%;height:100%;object-fit:cover;display:block;}
+  .imgs.muted img{filter:grayscale(1) contrast(1.08) brightness(1.05) sepia(0.18);opacity:0.9;}
+
+  .pub{
+    max-width:640px;background:linear-gradient(160deg,var(--panel-2),var(--panel));
+    border:1px solid var(--rule);padding:32px 36px;position:relative;
+    box-shadow:0 12px 28px -16px rgba(40,35,25,0.25);
+  }
+  .pub .venue-year{font-size:12px;color:var(--ink-soft);margin:0 0 10px;letter-spacing:0.02em;}
+  .pub h3{font-family:"Iowan Old Style",Georgia,serif;font-style:italic;font-size:19px;font-weight:400;line-height:1.5;margin:0 0 10px;}
+  .pub .authors{font-size:13px;color:var(--ink);margin-bottom:4px;}
+  .pub .meta{font-size:12.5px;color:var(--ink-soft);margin-bottom:18px;}
+  .pub .links a{font-size:12.5px;text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;margin-right:20px;}
+
+  .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  .exp-item{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--rule);padding:22px;box-shadow:0 8px 18px -14px rgba(40,35,25,0.25);position:relative;}
+  .exp-item .role{font-family:"Iowan Old Style",Georgia,serif;font-size:18px;margin:0 0 4px;}
+  .exp-item .org{font-size:12.5px;color:var(--ink-soft);margin-bottom:12px;}
+  .exp-item p{font-size:13.3px;color:var(--ink-soft);line-height:1.6;margin:0;}
+
+  .background-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .bg-item{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--rule);padding:26px 22px;box-shadow:0 8px 18px -14px rgba(40,35,25,0.25);}
+  .bg-item h4{font-family:"Iowan Old Style",Georgia,serif;font-size:16px;margin:0 0 10px;font-weight:400;}
+  .bg-item p{font-size:12.3px;color:var(--ink-soft);line-height:1.6;margin:0;}
+
+  .direction-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .direction-list > div{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--rule);padding:24px;box-shadow:0 8px 18px -14px rgba(40,35,25,0.25);}
+  .direction-list h4{font-size:11.5px;color:var(--ink-soft);margin:0 0 10px;}
+  .direction-list p{font-family:"Iowan Old Style",Georgia,serif;font-size:16px;margin:0;line-height:1.55;}
+
+  footer{padding:60px 0 100px;position:relative;}
+  footer .name{font-family:"Iowan Old Style",Georgia,serif;font-size:20px;margin:0 0 6px;}
+  footer .role{font-size:12.5px;color:var(--ink-soft);margin-bottom:22px;}
+  footer a{font-size:12.5px;text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;margin-right:22px;}
+
+  @media (max-width:900px){
+    .entries,.exp-grid,.background-grid{grid-template-columns:1fr;}
+    .entry.wide{flex-direction:column;align-items:flex-start;}
+    .direction-list{grid-template-columns:1fr;}
+    .topnav{flex-direction:column;align-items:flex-start;gap:12px;}
+    .topnav nav{gap:14px;}
+  }
 </style>
 </head>
 <body>
-<div class="ambient-gif" aria-hidden="true"><img src="subtle_cinematic_physics_background.gif" alt=""></div>
-<header>
-<div class="shell topbar">
-  <div class="brand"><span class="brand-short">ZAHIR HOSSAIN</span><span class="brand-full">A. S. M. Jahir Hossain</span></div>
-  <div class="top-right">
-    <nav class="nav"><a href="#research">Research</a><a href="#publication">Publication</a><a href="#experience">Experience</a><a href="#background">Background</a><a href="#direction">Direction</a><a href="#contact">Contact</a></nav>
-    <div class="social-links" aria-label="Social links">
-      <a class="social-link" href="https://github.com/Zahir-Hossain" target="_blank" rel="noreferrer" aria-label="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7a11.3 11.3 0 0 0-3.57 22c.57.1.78-.25.78-.55v-2.17c-3.18.69-3.85-1.35-3.85-1.35-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.33.96.1-.74.4-1.25.73-1.54-2.54-.29-5.21-1.27-5.21-5.59 0-1.24.44-2.25 1.18-3.04-.12-.29-.51-1.45.11-3 0 0 .96-.31 3.11 1.16A10.8 10.8 0 0 1 12 6.01c.96 0 1.93.13 2.83.38 2.15-1.47 3.1-1.16 3.1-1.16.63 1.55.24 2.71.12 3 .74.79 1.18 1.8 1.18 3.04 0 4.33-2.68 5.3-5.23 5.58.41.35.77 1.04.77 2.1v3.1c0 .3.21.66.79.55A11.3 11.3 0 0 0 12 .7Z"/></svg></a>
-      <a class="social-link" href="https://bd.linkedin.com/in/jahir-hossain" target="_blank" rel="noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.34 3.64a2.34 2.34 0 1 1 0 4.68 2.34 2.34 0 0 1 0-4.68ZM3.32 9.98h4.04V21H3.32V9.98Zm6.56 0h3.87v1.5h.06c.54-1.02 1.86-2.09 3.83-2.09 4.1 0 4.86 2.7 4.86 6.2V21h-4.03v-4.8c0-1.15-.02-2.62-1.6-2.62-1.6 0-1.84 1.25-1.84 2.53V21H9.88V9.98Z"/></svg></a>
-    </div>
-  </div>
-</div>
-<div class="shell hero">
-  <div>
-    <div class="hero-kicker">Electrical and Electronic Engineering</div>
-    <h1>Engineering toward a deeper understanding of physical systems.</h1>
-    <p>My background is in electrical and electronic engineering, with research and project experience in sensing, control, image and time-series analysis, and computational methods. I am seeking graduate training that builds from this foundation toward experimental measurement, scientific instrumentation, and physical science, with particular interest in optical and photonic systems.</p>
-    <div class="hero-actions"><a class="btn primary" href="#research">View research</a><a class="btn" href="mailto:hossainzahir2009@gmail.com">Contact me</a></div>
-  </div>
-  <aside class="interest-block">
-    <div class="interest-title">Graduate Study Interests</div>
-    <ul class="interest-list"><li>Experimental physics and measurement</li><li>Optical and photonic systems</li><li>Scientific instrumentation and sensing</li><li>Signal and computational analysis of physical measurements</li></ul>
-  </aside>
-  <div class="hero-cosmos" aria-hidden="true"><svg viewBox="0 0 700 340" preserveAspectRatio="none"><defs><filter id="photonGlow" x="-200%" y="-200%" width="400%" height="400%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs><g fill="none" stroke="#a98742" stroke-width=".65" opacity=".19"><path d="M8 188 C110 142 170 214 274 176 S430 132 528 174 S643 203 704 166"/><path d="M8 197 C112 157 176 204 276 184 S432 147 528 182 S644 194 704 175"/><path d="M8 206 C114 173 182 194 278 192 S433 163 528 190 S646 185 704 184"/></g><path d="M222 230 C354 208 430 172 520 118 S634 75 704 88" fill="none" stroke="#c3a052" stroke-width=".9" opacity=".34"/><g fill="none" stroke="#9d8144" stroke-width=".65" opacity=".23"><ellipse cx="664" cy="118" rx="116" ry="190"/><ellipse cx="674" cy="108" rx="70" ry="154" transform="rotate(17 674 108)"/></g><g fill="#d9b85f" opacity=".28"><circle cx="128" cy="78" r="1.3"/><circle cx="218" cy="258" r="1.5"/><circle cx="320" cy="88" r="1.2"/><circle cx="408" cy="244" r="1.4"/><circle cx="566" cy="246" r="1.5"/><circle cx="640" cy="58" r="1.1"/></g><g fill="#f3d886" opacity=".7"><circle cx="272" cy="110" r=".9"/><circle cx="462" cy="68" r=".9"/><circle cx="612" cy="178" r=".9"/></g><circle cx="520" cy="118" r="3.8" fill="#e0bd67" filter="url(#photonGlow)"/></svg></div>
-</div>
+
+<header class="topnav">
+  <div class="name">Zahir Hossain</div>
+  <nav>
+    <a href="#research">Research</a>
+    <a href="#publication">Publication</a>
+    <a href="#experience">Experience</a>
+    <a href="#direction">Direction</a>
+    <a href="#contact">Contact</a>
+    <span class="sep"></span>
+    <a class="icon-link" href="https://bd.linkedin.com/in/jahir-hossain" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 6.94a1.94 1.94 0 1 0 0-3.88 1.94 1.94 0 0 0 0 3.88ZM20.44 20h-3.38v-5.9c0-1.4-.03-3.2-1.95-3.2-1.96 0-2.26 1.53-2.26 3.1V20h-3.38V8.5h3.24v1.57h.05c.45-.85 1.56-1.75 3.21-1.75 3.43 0 4.06 2.26 4.06 5.2V20Z"/></svg>
+    </a>
+    <a class="icon-link" href="https://github.com/Zahir-Hossain" aria-label="GitHub">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.9c-2.78.62-3.37-1.38-3.37-1.38-.46-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.75 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.56 1.43.21 2.49.1 2.75.65.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.79-4.58 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.2C22 6.58 17.52 2 12 2Z"/></svg>
+    </a>
+    <span class="sep"></span>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
+      <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19 12h2.4M4.9 19l1.7-1.7M17.4 6.6l1.7-1.7"/></svg>
+      <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" style="display:none;"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.6 6.6 0 0 0 10.5 10.5Z"/></svg>
+    </button>
+  </nav>
 </header>
-<main>
-<section id="research"><div class="shell">
-  <div class="section-head"><h2>Selected Research and Projects</h2><p>Published research, computational reproductions, proposed extensions, engineering projects, and ongoing technical work.</p></div>
-  <div class="projects">
-    <article class="project-card microcomb"><div class="project-visual" aria-hidden="true"><svg class="symbol-svg" viewBox="0 0 360 220" preserveAspectRatio="none"><defs><linearGradient id="mcLine" x1="0" x2="1"><stop offset="0" stop-color="#57e4db"/><stop offset="1" stop-color="#8f7cff"/></linearGradient></defs><rect width="360" height="220" fill="#080808"/><g fill="none" stroke="url(#mcLine)"><circle cx="122" cy="111" r="53" stroke-width="2.4" stroke-opacity=".95"/><circle cx="122" cy="111" r="39" stroke-width="1" stroke-opacity=".30"/><path d="M18 111H64" stroke-width="2"/><path d="M62 107l8 4-8 4" stroke-width="1.4"/><path d="M175 111H213" stroke-width="1.3" stroke-opacity=".65"/></g><g stroke="#75e2da" stroke-width="1.5" opacity=".85"><path d="M225 76v70"/><path d="M237 84v54"/><path d="M249 67v88"/><path d="M261 91v40"/><path d="M273 60v102"/><path d="M285 86v50"/><path d="M297 72v78"/><path d="M309 96v30"/><path d="M321 81v60"/></g><path d="M225 111 C241 84 258 139 274 103 S305 90 330 112" fill="none" stroke="#a68cff" stroke-width="1.15" stroke-opacity=".7"/><text x="18" y="31" fill="#83d8d3" font-size="10" font-family="Arial">MICRORESONATOR / FREQUENCY COMB</text></svg></div><div class="project-copy"><div class="project-type">Computational reproduction · Photonics</div><h3>Breathing Kerr Microcomb Reproduction</h3><p>Reproduced published MgF₂ stationary and breathing soliton spectra from the authors’ open data, then implemented a normalized Lugiato–Lefever model and detuning-stability study. Computational reproduction only; no original laboratory measurements are claimed.</p><a class="arrow-link" href="https://github.com/Zahir-Hossain/microcomb-breather-reproduction">Project repository →</a></div></article>
-    <article class="project-card sensor"><div class="project-visual" aria-hidden="true"><svg class="symbol-svg" viewBox="0 0 360 220" preserveAspectRatio="none"><defs><linearGradient id="spContour" x1="0" x2="1"><stop offset="0" stop-color="#5aa6ff"/><stop offset="1" stop-color="#73d6a1"/></linearGradient></defs><rect width="360" height="220" fill="#080808"/><g stroke="#4d82a8" stroke-width="1" opacity=".55"><path d="M22 58L160 118"/><path d="M22 78L160 126"/><path d="M22 98L160 134"/><path d="M22 118L160 142"/><path d="M22 138L160 150"/><path d="M22 158L160 158"/></g><g fill="none" stroke="url(#spContour)"><ellipse cx="238" cy="112" rx="58" ry="40" stroke-width="1.7"/><ellipse cx="238" cy="112" rx="40" ry="27" stroke-width="1.1" opacity=".7"/><ellipse cx="238" cy="112" rx="22" ry="14" stroke-width="1" opacity=".45"/></g><g fill="#8fe1b0" stroke="#d9fff0" stroke-width=".7"><circle cx="195" cy="82" r="4"/><circle cx="226" cy="126" r="4"/><circle cx="265" cy="98" r="4"/><circle cx="283" cy="137" r="4"/><circle cx="247" cy="73" r="4"/></g><path d="M160 138H190" stroke="#78b6ff" stroke-width="2"/><text x="18" y="31" fill="#79b9ff" font-size="10" font-family="Arial">TRAJECTORIES / INTENSITY / PLACEMENT</text></svg></div><div class="project-copy"><div class="project-type">Proposed extension + toy simulation · May–June 2026</div><h3>Prediction- &amp; Uncertainty-Aware Sensor Placement</h3><p><strong>TOY SIMULATION / VERY BASIC EXPERIMENT.</strong> Proposed an extension to a published stochastic barrier-coverage framework by introducing future-route and uncertainty-aware trajectory scenarios before placement, then explored the idea in a simplified MATLAB simulation using synthetic routes, intensity maps, and greedy sensor selection.</p><a class="arrow-link" href="https://github.com/Zahir-Hossain/stochastic-sensor-placement-extension">Project repository →</a></div></article>
-    <article class="project-card reliability"><div class="project-visual" aria-hidden="true"><svg class="symbol-svg" viewBox="0 0 360 220" preserveAspectRatio="none"><rect width="360" height="220" fill="#080808"/><path d="M0 126 C43 118 65 84 99 111 S151 158 189 119 S247 82 282 121 S326 145 360 111" fill="none" stroke="#f0b45a" stroke-opacity=".92" stroke-width="2"/><path d="M0 145 C57 139 92 121 130 130 S207 151 248 132 S312 114 360 129" fill="none" stroke="#62d1d8" stroke-opacity=".48" stroke-width="1.2"/><path d="M0 102 C50 106 84 96 118 103 S187 113 225 101 S300 91 360 100" fill="none" stroke="#8066d7" stroke-opacity=".28" stroke-width="1"/><circle cx="188" cy="119" r="4.5" fill="#ffd37d"/><circle cx="247" cy="132" r="3" fill="#6fe0e6"/><text x="18" y="31" fill="#e9b968" font-size="10" font-family="Arial">GENERALIZATION / CONFIDENCE</text></svg></div><div class="project-copy"><div class="project-type">Ongoing project · Reliability</div><h3>Reliability-Aware Model Evaluation</h3><p>Ongoing work studying reliability under distribution shift and whether stronger predictive performance is matched by more dependable confidence-based behaviour.</p><a class="arrow-link" href="https://github.com/Zahir-Hossain/geospatial-ai-reliability">Project repository →</a></div></article>
-    <article class="project-card monitoring"><div class="project-visual" aria-hidden="true"><svg class="station-svg" viewBox="0 0 360 220" preserveAspectRatio="none"><rect width="360" height="220" fill="#080808"/><g opacity=".24" stroke="#54d8cd" fill="none"><path d="M0 65 C70 40 115 80 180 62 S294 36 360 62"/><path d="M0 81 C72 56 132 97 201 78 S296 55 360 78"/></g><g stroke="#b9e4d5" stroke-width="3" fill="none"><path d="M191 54V180"/><path d="M160 75H222"/><path d="M164 75V62M218 75V60"/><circle cx="160" cy="59" r="7"/><circle cx="218" cy="57" r="7"/><path d="M191 93H239M239 93V78"/><path d="M177 116H208"/><rect x="209" y="106" width="29" height="18" rx="2"/><path d="M191 138L152 160M191 138L231 160"/><rect x="145" y="156" width="32" height="18" transform="rotate(-15 161 165)" fill="#173d34"/><path d="M150 159l22 10M154 155l22 10"/></g><circle cx="239" cy="75" r="5" fill="#6cf0bc"/><text x="17" y="28" fill="#78d9c8" font-size="10" font-family="Arial">SENSING / MONITORING / CONTROL</text></svg></div><div class="project-copy"><div class="project-type">Engineering project · Sensing</div><h3>Environmental Monitoring System</h3><p>Academic engineering work involving sensing, microcontrollers, monitoring, and control, providing practical experience with electronics, measurement, and system integration.</p></div></article>
-    <article class="project-card wide segmentation"><div class="project-visual" aria-hidden="true"><svg class="symbol-svg" viewBox="0 0 360 220" preserveAspectRatio="none"><rect width="360" height="220" fill="#080808"/><text x="17" y="29" fill="#d6b45e" font-size="10" font-family="Arial">TIME SERIES / SEGMENTATION / EVALUATION</text><g fill="none" stroke="#6fb7ff" stroke-width="1" opacity=".55"><rect x="30" y="58" width="58" height="58"/><rect x="42" y="70" width="58" height="58"/><rect x="54" y="82" width="58" height="58"/><rect x="66" y="94" width="58" height="58"/></g><g fill="none" stroke="#65d3a0" stroke-width="1.5"><path d="M179 68l35-14 28 18 35-7 27 22-11 34-37 9-20 30-37-14-22-29z"/><path d="M213 84l23-9 17 14 22-5 12 18-9 17-24 3-13 17-23-9-12-19z" opacity=".65"/></g><path d="M124 113H163" stroke="#d7b45f" stroke-width="1.3"/><path d="M158 108l8 5-8 5" fill="none" stroke="#d7b45f" stroke-width="1.3"/><g fill="#f1cb72"><circle cx="199" cy="78" r="2.6"/><circle cx="252" cy="96" r="2.6"/><circle cx="286" cy="115" r="2.6"/></g></svg></div><div class="project-copy"><div class="project-type">Scientific ML · Semantic segmentation</div><h3>Multi-Temporal Crop Type Semantic Segmentation</h3><p>Built a reproducible multi-temporal semantic-segmentation workflow on Sentinel-2 image sequences, comparing an engineered-feature Random Forest baseline with a compact UTAE model. Validation mIoU improved from 0.446 to 0.572; the selected model achieved 0.473 mIoU on the held-out split, with fixed folds, validation-only checkpoint selection, saved artifacts, and reproducibility checks.</p></div></article>
-    <article class="project-card wide satellite"><div class="project-visual" aria-label="Satellite imagery of the Habiganj study area"><div class="tile-mosaic"><img src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/11/880/1544" alt=""><img src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/11/880/1545" alt=""><img src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/11/881/1544" alt=""><img src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/11/881/1545" alt=""></div></div><div class="project-copy"><div class="project-type">Published research · Remote sensing</div><h3>Multispectral Data Analysis and Modelling</h3><p>Peer-reviewed work using multispectral observations, image-analysis methods, regression, and time-series forecasting, with comparative evaluation across multiple modelling approaches.</p><a class="arrow-link" href="#publication">Publication →</a></div></article>
-  </div>
-</div></section>
-<section id="publication"><div class="shell"><div class="section-head"><h2>Publication</h2><p>Peer-reviewed conference work from my undergraduate research.</p></div><div class="paper-row"><div class="paper-thumb" aria-hidden="true"></div><div class="paper-meta"><h3>Agricultural Analysis and Crop Yield Prediction of Habiganj using Multispectral Bands of Satellite Imagery with Machine Learning</h3><p>A. S. M. Jahir Hossain et al. · 2020 11th International Conference on Electrical and Computer Engineering (ICECE)</p></div><div class="paper-actions"><a class="mini-btn primary" href="https://doi.org/10.1109/ICECE51571.2020.9393066">DOI</a><a class="mini-btn" href="https://dspace.bracu.ac.bd/items/7ebc33d1-5420-47a2-bc09-f81bcd222cdc">Thesis</a></div></div></div></section>
-<section id="experience"><div class="shell"><div class="section-head"><h2>Experience</h2><p>Research and professional work relevant to scientific computing, machine learning, and AI evaluation.</p></div><div class="experience-list"><article class="experience-item"><h3 class="experience-role">AI Training &amp; Evaluation</h3><div class="experience-org">Professional AI training and evaluation work</div><p>General-purpose and domain-specific AI training and evaluation, including model-response review, reasoning and error analysis, quality assessment, and structured feedback on task-specific performance and model behaviour.</p></article><article class="experience-item"><h3 class="experience-role">Student Researcher</h3><div class="experience-org">LaSSET · BRAC University</div><p>Worked on multispectral satellite imagery, image analysis, and machine-learning and time-series approaches including Mask R-CNN, Random Forest, and LSTM. This research contributed to the peer-reviewed ICECE 2020 publication listed above.</p></article></div></div></section>
-<section id="background"><div class="shell"><div class="section-head"><h2>Technical Background</h2><p>Tools and areas grounded in coursework, projects, research, and professional work.</p></div><div class="skills"><div class="skill"><div class="skill-icon">⌁</div><h3>Engineering</h3><p>Circuits, electronics, control, sensing, microcontrollers, monitoring systems, and practical measurement.</p></div><div class="skill"><div class="skill-icon">⌘</div><h3>Scientific Computing</h3><p>Python, MATLAB, NumPy/SciPy, numerical modelling, FFT and signal analysis, image analysis, and time-series workflows.</p></div><div class="skill"><div class="skill-icon">◌</div><h3>Machine Learning</h3><p>PyTorch, Random Forest, UTAE, Mask R-CNN, LSTM, semantic segmentation, uncertainty and reliability, and model evaluation.</p></div><div class="skill"><div class="skill-icon">◇</div><h3>Research Workflow</h3><p>Git, GitHub, LaTeX, literature review, reproducible experiments, open-data reproduction, environment tracking, and technical writing.</p></div></div></div></section>
-<section id="direction"><div class="shell"><div class="section-head"><h2>Graduate Direction</h2><p>What I have now, what I want graduate study to develop, and where that could lead.</p></div><div class="direction-wrap"><svg class="direction-wave" viewBox="0 0 1180 72" preserveAspectRatio="none" aria-hidden="true"><path d="M0 43 C120 42 150 16 270 39 S430 60 560 33 S765 9 890 38 S1040 62 1180 31" fill="none" stroke="#244952" stroke-width="1.5"/><path d="M0 47 C115 45 170 30 265 42 S450 51 565 37 S745 23 890 40 S1045 48 1180 35" fill="none" stroke="#438e8a" stroke-width="1.1" opacity=".72"/></svg><div class="direction-steps"><div class="step"><div class="step-dot"></div><h3>Existing Foundation</h3><p>Electrical engineering, sensing, control, image and time-series analysis, and computational research.</p></div><div class="step"><div class="step-dot"></div><h3>Graduate Development</h3><p>Experimental methods, physical measurement, scientific instrumentation, and stronger physics foundations.</p></div><div class="step"><div class="step-dot"></div><h3>Longer-Term Direction</h3><p>Experimental physical research, with growing interest in optical and photonic systems and advanced scientific instrumentation.</p></div></div><div class="direction-signature">A. S. M. Jahir Hossain</div></div></div></section>
-</main>
-<footer id="contact"><div class="shell footer-row"><div><div class="footer-name">ZAHIR HOSSAIN</div><div class="footer-full">A. S. M. Jahir Hossain</div><div class="footer-sub">Electrical and Electronic Engineering · Dhaka, Bangladesh</div><div class="credit">Habiganj project card uses Esri World Imagery as contextual basemap imagery.</div></div><div class="footer-links"><a href="mailto:hossainzahir2009@gmail.com">Email</a><a href="https://github.com/Zahir-Hossain">GitHub</a></div></div></footer>
+
+<div class="wrap">
+  <main>
+
+    <div class="hero">
+      <div class="hero-grid">
+        <div class="hero-left">
+          <p class="field">Electrical and Electronic Engineering</p>
+          <h1>Engineering toward a deeper understanding of physical systems.</h1>
+          <p class="lede">My background is in electrical and electronic engineering, with research and project experience in sensing, control, image and time-series analysis, and computational methods. I am seeking graduate training that builds from this foundation toward experimental measurement, scientific instrumentation, and physical science, with particular interest in optical and photonic systems.</p>
+          <div class="cta">
+            <a href="#research">View research</a>
+            <a href="mailto:hossainzahir2009@gmail.com">Contact me</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <svg class="grad-wave" viewBox="0 0 340 220" preserveAspectRatio="none">
+            <defs>
+              <filter id="photonGlow" x="-100%" y="-100%" width="300%" height="300%">
+                <feGaussianBlur stdDeviation="2.2" result="blur"/>
+                <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+              </filter>
+            </defs>
+            <path d="M0,150 C50,120 70,180 110,140 C150,100 170,160 210,120 C250,80 270,110 340,40"
+              fill="none" stroke="#938d80" stroke-width="1.3" opacity="0.85"/>
+            <path d="M0,170 C50,150 70,200 110,170 C150,140 170,190 210,160 C250,130 270,150 340,90"
+              fill="none" stroke="#938d80" stroke-width="0.9" opacity="0.7"/>
+            <circle cx="255" cy="95" r="3.2" fill="#d9a441" filter="url(#photonGlow)"/>
+            <g fill="#938d80">
+              <circle cx="30" cy="60" r="1.4"/><circle cx="90" cy="30" r="1.1"/>
+              <circle cx="150" cy="70" r="1.5"/><circle cx="200" cy="20" r="1.1"/>
+              <circle cx="300" cy="150" r="1.4"/><circle cx="60" cy="190" r="1.1"/>
+            </g>
+          </svg>
+          <p class="grad-tag">Graduate Study Interests</p>
+          <ul class="interests">
+            <li>Experimental physics and measurement</li>
+            <li>Optical and photonic systems</li>
+            <li>Scientific instrumentation and sensing</li>
+            <li>Signal and computational analysis of physical measurements</li>
+            <li>Scientific computing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <section id="research">
+      <p class="section-label">Selected Research and Projects</p>
+      <h2 class="section-title">Published research, computational reproductions, proposed extensions, engineering projects, and ongoing technical work.</h2>
+
+      <div class="entries">
+        <div class="entry">
+          <div class="diagram">
+            <svg viewBox="0 0 160 90">
+              <circle cx="55" cy="45" r="30" fill="none" stroke="var(--violet)" stroke-width="1.3"/>
+              <g stroke="var(--violet)" stroke-width="1.1" opacity="0.9">
+                <line x1="105" y1="75" x2="105" y2="55"/><line x1="113" y1="75" x2="113" y2="25"/>
+                <line x1="121" y1="75" x2="121" y2="50"/><line x1="129" y1="75" x2="129" y2="30"/>
+                <line x1="137" y1="75" x2="137" y2="60"/>
+              </g>
+            </svg>
+          </div>
+          <div class="cat">Computational reproduction · Photonics</div>
+          <h3>Breathing Kerr Microcomb Reproduction</h3>
+          <p>Reproduced published MgF₂ stationary and breathing soliton spectra from the authors' open data, then implemented a normalized Lugiato–Lefever model and detuning-stability study.</p>
+          <a class="link" href="https://github.com/Zahir-Hossain/microcomb-breather-reproduction">Project repository ↗</a>
+        </div>
+
+        <div class="entry">
+          <div class="diagram">
+            <svg viewBox="0 0 160 90">
+              <path d="M10,75 C55,55 60,25 110,15" fill="none" stroke="var(--ink-soft)" stroke-width="1" opacity="0.5"/>
+              <g fill="var(--ink-soft)"><circle cx="45" cy="55" r="4"/><circle cx="80" cy="28" r="4"/><circle cx="115" cy="45" r="4"/></g>
+            </svg>
+          </div>
+          <div class="cat">Proposed extension + toy simulation · May–June 2026</div>
+          <h3>Prediction- &amp; Uncertainty-Aware Sensor Placement</h3>
+          <p>Toy simulation / very basic experiment. Extended a published stochastic barrier-coverage framework with future-route and uncertainty-aware scenarios, explored via a simplified MATLAB simulation.</p>
+          <a class="link" href="https://github.com/Zahir-Hossain/stochastic-sensor-placement-extension">Project repository ↗</a>
+        </div>
+
+        <div class="entry">
+          <div class="diagram">
+            <svg viewBox="0 0 160 90">
+              <path d="M10,75 Q55,20 80,45 T150,10" fill="none" stroke="var(--amber)" stroke-width="1.5"/>
+              <line x1="10" y1="82" x2="150" y2="82" stroke="var(--rule)" stroke-width="1"/>
+            </svg>
+          </div>
+          <div class="cat">Ongoing project · Reliability</div>
+          <h3>Reliability-Aware Model Evaluation</h3>
+          <p>Studying reliability under distribution shift and whether stronger predictive performance is matched by more dependable confidence-based behaviour.</p>
+          <a class="link" href="https://github.com/Zahir-Hossain/geospatial-ai-reliability">Project repository ↗</a>
+        </div>
+
+        <div class="entry">
+          <div class="diagram">
+            <svg viewBox="0 0 160 90">
+              <polyline points="10,60 30,50 30,25 55,25 55,70 80,70 80,15 105,15 105,50 130,50 130,38 150,38" fill="none" stroke="#8f8a78" stroke-width="1.2"/>
+              <circle cx="55" cy="25" r="3" fill="var(--ink-soft)"/>
+            </svg>
+          </div>
+          <div class="cat">Engineering project · Sensing</div>
+          <h3>Environmental Monitoring System</h3>
+          <p>Academic engineering work in sensing, microcontrollers, monitoring, and control — practical experience with electronics and system integration.</p>
+        </div>
+
+        <div class="entry wide">
+          <div class="diagram">
+            <svg viewBox="0 0 220 150">
+              <rect x="0" y="0" width="220" height="150" fill="#e6e1d2"/>
+              <rect x="0" y="0" width="100" height="63" fill="#8f9a6e"/>
+              <rect x="100" y="0" width="120" height="45" fill="#a4ac82"/>
+              <rect x="0" y="63" width="62" height="87" fill="#b4a173"/>
+              <rect x="62" y="63" width="66" height="57" fill="#7c8a6c"/>
+              <rect x="128" y="45" width="92" height="105" fill="#697d5c"/>
+            </svg>
+          </div>
+          <div>
+            <div class="cat">Scientific ML · Semantic segmentation</div>
+            <h3>Multi-Temporal Crop Type Semantic Segmentation</h3>
+            <p>Built a reproducible multi-temporal semantic-segmentation workflow on Sentinel-2 image sequences, comparing an engineered-feature Random Forest baseline with a compact UTAE model. Validation mIoU improved from 0.446 to 0.572; the selected model achieved 0.473 mIoU on the held-out split.</p>
+          </div>
+        </div>
+
+        <div class="entry wide">
+          <div class="diagram">
+            <svg viewBox="0 0 220 150">
+              <rect x="0" y="0" width="220" height="150" fill="var(--bg)"/>
+              <!-- band stack: Blue / Green / Red / NIR -->
+              <g>
+                <rect x="24" y="30" width="14" height="90" fill="var(--clayblue)" opacity="0.85"/>
+                <rect x="44" y="30" width="14" height="90" fill="var(--sage)" opacity="0.85"/>
+                <rect x="64" y="30" width="14" height="90" fill="#b25b4a" opacity="0.85"/>
+                <rect x="84" y="30" width="14" height="90" fill="var(--amber)" opacity="0.85"/>
+              </g>
+              <g font-family="-apple-system,Arial,sans-serif" font-size="7" fill="var(--ink-soft)">
+                <text x="31" y="128" text-anchor="middle">B</text>
+                <text x="51" y="128" text-anchor="middle">G</text>
+                <text x="71" y="128" text-anchor="middle">R</text>
+                <text x="91" y="128" text-anchor="middle">NIR</text>
+              </g>
+              <!-- reflectance curve -->
+              <polyline points="120,110 138,95 156,70 174,50 196,38" fill="none" stroke="var(--violet)" stroke-width="1.6"/>
+              <g fill="var(--violet)"><circle cx="120" cy="110" r="2"/><circle cx="138" cy="95" r="2"/><circle cx="156" cy="70" r="2"/><circle cx="174" cy="50" r="2"/><circle cx="196" cy="38" r="2"/></g>
+              <line x1="112" y1="120" x2="210" y2="120" stroke="var(--rule)" stroke-width="1"/>
+              <line x1="112" y1="30" x2="112" y2="120" stroke="var(--rule)" stroke-width="1"/>
+            </svg>
+          </div>
+          <div>
+            <div class="cat">Published research · ML application for geo-sat data</div>
+            <h3>Multispectral Data Analysis and Modelling</h3>
+            <p>Peer-reviewed work using multispectral observations, image-analysis methods, regression, and time-series forecasting, with comparative evaluation across multiple modelling approaches.</p>
+            <a class="link" href="#publication">Publication ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publication">
+      <p class="section-label">Publication</p>
+      <h2 class="section-title">Peer-reviewed conference work from my undergraduate research.</h2>
+      <div class="pub">
+        <p class="venue-year">2020 · 11th International Conference on Electrical and Computer Engineering (ICECE)</p>
+        <h3>"Agricultural Analysis and Crop Yield Prediction of Habiganj using Multispectral Bands of Satellite Imagery with Machine Learning"</h3>
+        <p class="authors">A. S. M. Jahir Hossain et al.</p>
+        <div class="links">
+          <a href="https://doi.org/10.1109/ICECE51571.2020.9393066">DOI ↗</a>
+          <a href="https://dspace.bracu.ac.bd/items/7ebc33d1-5420-47a2-bc09-f81bcd222cdc">Thesis ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <p class="section-label">Experience</p>
+      <h2 class="section-title">Research and professional work relevant to scientific computing, machine learning, and AI evaluation.</h2>
+      <div class="exp-grid">
+        <div class="exp-item">
+          <h3 class="role">AI Training &amp; Evaluation</h3>
+          <p class="org">Professional AI training and evaluation work</p>
+          <p>General-purpose and domain-specific AI training and evaluation, including model-response review, reasoning and error analysis, quality assessment, and structured feedback on task-specific performance and model behaviour.</p>
+        </div>
+        <div class="exp-item">
+          <h3 class="role">Student Researcher</h3>
+          <p class="org">LaSSET · BRAC University</p>
+          <p>Worked on multispectral satellite imagery, image analysis, and machine-learning and time-series approaches including Mask R-CNN, Random Forest, and LSTM. Contributed to the peer-reviewed ICECE 2020 publication.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="section-label">Technical Background</p>
+      <h2 class="section-title">Tools and areas grounded in coursework, projects, research, and professional work.</h2>
+      <div class="background-grid">
+        <div class="bg-item"><h4>Engineering</h4><p>Circuits, electronics, control, sensing, microcontrollers, monitoring systems, and practical measurement.</p></div>
+        <div class="bg-item"><h4>Scientific Computing</h4><p>Python, MATLAB, NumPy/SciPy, numerical modelling, FFT and signal analysis, image analysis, and time-series workflows.</p></div>
+        <div class="bg-item"><h4>Machine Learning</h4><p>PyTorch, Random Forest, UTAE, Mask R-CNN, LSTM, semantic segmentation, uncertainty and reliability, and model evaluation.</p></div>
+        <div class="bg-item"><h4>Research Workflow</h4><p>Git, GitHub, LaTeX, literature review, reproducible experiments, open-data reproduction, environment tracking, and technical writing.</p></div>
+      </div>
+    </section>
+
+    <section id="direction">
+      <p class="section-label">Graduate Direction</p>
+      <h2 class="section-title">What I have now, what I want graduate study to develop, and where that could lead.</h2>
+      <div class="direction-list">
+        <div><h4>Existing Foundation</h4><p>Electrical engineering, sensing, control, image and time-series analysis, and computational research.</p></div>
+        <div><h4>Graduate Development</h4><p>Experimental methods, physical measurement, scientific instrumentation, and stronger physics foundations.</p></div>
+        <div><h4>Longer-Term Direction</h4><p>Experimental physical research, with growing interest in optical and photonic systems and advanced scientific instrumentation.</p></div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <p class="name">Zahir Hossain</p>
+      <p class="role">Electrical and Electronic Engineering · Dhaka, Bangladesh</p>
+      <a href="mailto:hossainzahir2009@gmail.com">Email</a>
+      <a href="https://github.com/Zahir-Hossain">GitHub</a>
+      <a href="https://bd.linkedin.com/in/jahir-hossain">LinkedIn</a>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+  const root = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  const sun = document.getElementById('iconSun');
+  const moon = document.getElementById('iconMoon');
+  function apply(theme){
+    if(theme === 'dark'){ root.setAttribute('data-theme','dark'); sun.style.display='none'; moon.style.display='block'; }
+    else { root.removeAttribute('data-theme'); sun.style.display='block'; moon.style.display='none'; }
+  }
+  const saved = localStorage.getItem('theme') || 'dark';
+  apply(saved);
+  btn.addEventListener('click', () => {
+    const now = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    apply(now);
+    localStorage.setItem('theme', now);
+  });
+</script>
 </body>
 </html>
