@@ -2,6 +2,7 @@
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
+<meta name="color-scheme" content="dark light">
 <title>Zahir Hossain</title>
 <style>
   :root{
@@ -18,6 +19,7 @@
     --clayblue:#4f6a72;
   }
   html[data-theme="dark"]{
+    color-scheme:dark;
     --bg:#121113;
     --bg-2:#0c0b0d;
     --panel:#1a191b;
@@ -30,6 +32,7 @@
     --amber:#d9a441;
     --clayblue:#7ba0aa;
   }
+  html:not([data-theme="dark"]){color-scheme:light;}
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
@@ -63,14 +66,8 @@
   }
   html[data-theme="dark"] body::after{background:none;}
   html[data-theme="dark"] body::before{
-    opacity:0.9;
-    mix-blend-mode:normal;
-    background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNjAiIGhlaWdodD0iMzYwIj48ZyBmaWxsPSIjY2ZjN2I2IiBvcGFjaXR5PSIwLjg1Ij48Y2lyY2xlIGN4PSIxOTIuNiIgY3k9IjEzMi43IiByPSIwLjY1Ii8+PGNpcmNsZSBjeD0iMTUzLjQiIGN5PSIyOTUuMSIgcj0iMC43MSIvPjxjaXJjbGUgY3g9IjIyNC45IiBjeT0iMzM3LjYiIHI9IjEuMTIiLz48Y2lyY2xlIGN4PSIzNDcuNiIgY3k9IjIwLjQiIHI9IjEuMzciLz48Y2lyY2xlIGN4PSI1NC44IiBjeT0iNDUuNSIgcj0iMC44OCIvPjxjaXJjbGUgY3g9IjY3LjYiIGN5PSIyMDguNyIgcj0iMS4xOCIvPjxjaXJjbGUgY3g9IjE5Ni44IiBjeT0iMjYuMSIgcj0iMC42NSIvPjxjaXJjbGUgY3g9IjI0My41IiBjeT0iMTU0LjUiIHI9IjAuODgiLz48Y2lyY2xlIGN4PSIxNjMuNSIgY3k9IjEwOS41IiByPSIxLjMxIi8+PGNpcmNsZSBjeD0iODkuOSIgY3k9IjIwNi4yIiByPSIxLjA3Ii8+PGNpcmNsZSBjeD0iMTUxLjIiIGN5PSIyNzAuNSIgcj0iMC43NCIvPjxjaXJjbGUgY3g9IjE3LjgiIGN5PSIyMzkuMiIgcj0iMS4yOSIvPjxjaXJjbGUgY3g9IjMxMi4yIiBjeT0iMTE0LjQiIHI9IjEuMjMiLz48Y2lyY2xlIGN4PSIyMDguMSIgY3k9IjE2NC42IiByPSIxLjM2Ii8+PGNpcmNsZSBjeD0iMTcwLjkiIGN5PSIyMzcuOCIgcj0iMC42NSIvPjxjaXJjbGUgY3g9IjIzMS44IiBjeT0iMzUzLjYiIHI9IjEuMzQiLz48Y2lyY2xlIGN4PSIxMzkuOCIgY3k9IjIzOS40IiByPSIwLjYyIi8+PGNpcmNsZSBjeD0iNjMuMiIgY3k9IjQ1LjIiIHI9IjAuNjUiLz48Y2lyY2xlIGN4PSI0OS41IiBjeT0iOTEuMiIgcj0iMC45NSIvPjxjaXJjbGUgY3g9IjMyLjQiIGN5PSIxNjIuMSIgcj0iMS4wOSIvPjxjaXJjbGUgY3g9IjI5Mi40IiBjeT0iMzA4LjEiIHI9IjAuODUiLz48Y2lyY2xlIGN4PSI2Ni4wIiBjeT0iODUuNiIgcj0iMC44MSIvPjxjaXJjbGUgY3g9IjIxMS40IiBjeT0iOTYuNSIgcj0iMC42Ii8+PGNpcmNsZSBjeD0iMTM0LjAiIGN5PSIyMDMuNCIgcj0iMS40NiIvPjxjaXJjbGUgY3g9IjMyMC42IiBjeT0iMjc4LjUiIHI9IjEuMzkiLz48Y2lyY2xlIGN4PSIxNDIuMSIgY3k9IjE0NC40IiByPSIwLjY5Ii8+PGNpcmNsZSBjeD0iMzkuNyIgY3k9IjEzMi4wIiByPSIwLjYyIi8+PGNpcmNsZSBjeD0iMjIwLjIiIGN5PSI1Ni4zIiByPSIwLjgzIi8+PGNpcmNsZSBjeD0iMTMyLjIiIGN5PSI0Ny4yIiByPSIxLjM2Ii8+PGNpcmNsZSBjeD0iMTk1LjIiIGN5PSIxMy41IiByPSIxLjA4Ii8+PGNpcmNsZSBjeD0iMzA3LjkiIGN5PSIyNDkuMSIgcj0iMC44NCIvPjxjaXJjbGUgY3g9IjYyLjgiIGN5PSIyNzUuNyIgcj0iMS4wOCIvPjxjaXJjbGUgY3g9IjEyMC4wIiBjeT0iODIuNSIgcj0iMS4zMyIvPjxjaXJjbGUgY3g9IjMwNC4xIiBjeT0iMjg3LjciIHI9IjEuMzQiLz48Y2lyY2xlIGN4PSIxMy44IiBjeT0iMTAyLjQiIHI9IjAuODMiLz48L2c+PGcgZmlsbD0iI2YyZGJhOCI+PGNpcmNsZSBjeD0iMTE4LjAiIGN5PSI1Ny4xIiByPSIxLjU1Ii8+PGNpcmNsZSBjeD0iMTcuMiIgY3k9IjE1Ni42IiByPSIwLjg2Ii8+PGNpcmNsZSBjeD0iMjYwLjgiIGN5PSIxMDUuNCIgcj0iMS45MiIvPjxjaXJjbGUgY3g9IjEzMC4zIiBjeT0iMzE1LjIiIHI9IjEuOTAiLz48Y2lyY2xlIGN4PSIxODUuNSIgY3k9IjIyMS40IiByPSIxLjU3Ii8+PGNpcmNsZSBjeD0iMjUuOSIgY3k9IjI3LjciIHI9IjEuMDMiLz48Y2lyY2xlIGN4PSIxMjMuNyIgY3k9IjIyLjUiIHI9IjAuNzgiLz48Y2lyY2xlIGN4PSIxNjguMCIgY3k9IjE3NC4zIiByPSIwLjg4Ii8+PGNpcmNsZSBjeD0iMTI0LjYiIGN5PSI5Ny4yIiByPSIxLjc2Ii8+PGNpcmNsZSBjeD0iMTIuMSIgY3k9IjMzOC43IiByPSIxLjQwIi8+PGNpcmNsZSBjeD0iODMuOCIgY3k9IjE4Ni4yIiByPSIxLjIwIi8+PC9nPjwvc3ZnPg==");
-    background-repeat:repeat;
-    background-size:360px 360px;
-  }
-  html[data-theme="dark"] body::before{
     opacity:0.65;
+    mix-blend-mode:normal;
     background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNDAiIGhlaWdodD0iMzQwIj48ZyBmaWxsPSIjOTQ4ZDdlIj48Y2lyY2xlIGN4PSIxOCIgY3k9IjQyIiByPSIwLjciLz48Y2lyY2xlIGN4PSI3NiIgY3k9IjEyIiByPSIwLjUiLz48Y2lyY2xlIGN4PSIxMjEiIGN5PSI4OCIgcj0iMC44Ii8+PGNpcmNsZSBjeD0iMTYzIiBjeT0iMzAiIHI9IjAuNSIvPjxjaXJjbGUgY3g9IjIwNSIgY3k9IjEyMCIgcj0iMC42Ii8+PGNpcmNsZSBjeD0iMjUwIiBjeT0iNTUiIHI9IjAuNSIvPjxjaXJjbGUgY3g9IjI4OCIgY3k9Ijk1IiByPSIwLjciLz48Y2lyY2xlIGN4PSIzMjAiIGN5PSIyMCIgcj0iMC41Ii8+PGNpcmNsZSBjeD0iNDAiIGN5PSIxNTAiIHI9IjAuNiIvPjxjaXJjbGUgY3g9Ijk1IiBjeT0iMTkwIiByPSIwLjUiLz48Y2lyY2xlIGN4PSIxNDAiIGN5PSIxNjAiIHI9IjAuNyIvPjxjaXJjbGUgY3g9IjE4NSIgY3k9IjIxMCIgcj0iMC41Ii8+PGNpcmNsZSBjeD0iMjMwIiBjeT0iMTc1IiByPSIwLjYiLz48Y2lyY2xlIGN4PSIyNzAiIGN5PSIyMzAiIHI9IjAuNSIvPjxjaXJjbGUgY3g9IjMwNSIgY3k9IjE5MCIgcj0iMC43Ii8+PGNpcmNsZSBjeD0iMjUiIGN5PSIyNjAiIHI9IjAuNSIvPjxjaXJjbGUgY3g9IjcwIiBjeT0iMzAwIiByPSIwLjYiLz48Y2lyY2xlIGN4PSIxMTUiIGN5PSIyNTAiIHI9IjAuNSIvPjxjaXJjbGUgY3g9IjE2MCIgY3k9IjI5MCIgcj0iMC43Ii8+PGNpcmNsZSBjeD0iMjEwIiBjeT0iMjYwIiByPSIwLjUiLz48Y2lyY2xlIGN4PSIyNTUiIGN5PSIzMTAiIHI9IjAuNiIvPjxjaXJjbGUgY3g9IjMwMCIgY3k9IjI4MCIgcj0iMC41Ii8+PGNpcmNsZSBjeD0iMzMwIiBjeT0iMjUwIiByPSIwLjYiLz48Y2lyY2xlIGN4PSI1NSIgY3k9Ijc1IiByPSIwLjQiLz48Y2lyY2xlIGN4PSIxODAiIGN5PSI0NSIgcj0iMC40Ii8+PGNpcmNsZSBjeD0iMjQ1IiBjeT0iMTQ1IiByPSIwLjQiLz48Y2lyY2xlIGN4PSIxMCIgY3k9IjE5MCIgcj0iMC40Ii8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTIwIiByPSIwLjQiLz48L2c+PC9zdmc+");
     background-repeat:repeat;
     background-size:340px 340px;
@@ -199,9 +196,9 @@
       <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.9c-2.78.62-3.37-1.38-3.37-1.38-.46-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.75 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.56 1.43.21 2.49.1 2.75.65.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.79-4.58 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.2C22 6.58 17.52 2 12 2Z"/></svg>
     </a>
     <span class="sep"></span>
-    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
-      <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19 12h2.4M4.9 19l1.7-1.7M17.4 6.6l1.7-1.7"/></svg>
-      <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" style="display:none;"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.6 6.6 0 0 0 10.5 10.5Z"/></svg>
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" type="button">
+      <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" style="display:none;"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19 12h2.4M4.9 19l1.7-1.7M17.4 6.6l1.7-1.7"/></svg>
+      <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.6 6.6 0 0 0 10.5 10.5Z"/></svg>
     </button>
   </nav>
 </header>
@@ -297,10 +294,28 @@
   const btn = document.getElementById('themeToggle');
   const sun = document.getElementById('iconSun');
   const moon = document.getElementById('iconMoon');
-  function apply(theme){if(theme === 'dark'){ root.setAttribute('data-theme','dark'); sun.style.display='none'; moon.style.display='block'; } else { root.removeAttribute('data-theme'); sun.style.display='block'; moon.style.display='none'; }}
-  const saved = localStorage.getItem('theme') || 'dark';
-  apply(saved);
-  btn.addEventListener('click', () => {const now = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'; apply(now); localStorage.setItem('theme', now);});
+
+  function apply(theme){
+    const dark = theme === 'dark';
+    if(dark){
+      root.setAttribute('data-theme','dark');
+      sun.style.display='none';
+      moon.style.display='block';
+      btn.setAttribute('aria-label','Switch to light mode');
+    } else {
+      root.removeAttribute('data-theme');
+      sun.style.display='block';
+      moon.style.display='none';
+      btn.setAttribute('aria-label','Switch to dark mode');
+    }
+  }
+
+  apply('dark');
+
+  btn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    apply(next);
+  });
 </script>
 </body>
 </html>
