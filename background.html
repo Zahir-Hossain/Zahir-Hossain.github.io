@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+  (function(){
+    try{
+      var t = localStorage.getItem('zh-theme');
+      if(!t){ t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'; }
+      if(t === 'dark'){ document.documentElement.setAttribute('data-theme','dark'); }
+    }catch(e){ document.documentElement.setAttribute('data-theme','dark'); }
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#121113" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f1e9d3" media="(prefers-color-scheme: light)">
+<title>Background — Zahir Hossain</title>
+<meta name="description" content="Research and professional experience, and the tools and methods used across coursework, projects, and research by A. S. M. Jahir Hossain.">
+<link rel="canonical" href="https://zahir-hossain.github.io/background.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Background — Zahir Hossain">
+<meta property="og:description" content="Research and professional experience, and the tools and methods used across coursework, projects, and research.">
+<meta property="og:url" content="https://zahir-hossain.github.io/background.html">
+<meta property="og:image" content="https://zahir-hossain.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Background — Zahir Hossain">
+<meta name="twitter:description" content="Research and professional experience, and the tools and methods used across coursework, projects, and research.">
+<meta name="twitter:image" content="https://zahir-hossain.github.io/assets/og-image.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topnav">
+  <a class="brand" href="index.html">
+    <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+      <circle class="nucleus" cx="12" cy="12" r="1.6"></circle>
+      <g class="orbit-group">
+        <ellipse class="ring" cx="12" cy="12" rx="9" ry="4"></ellipse>
+        <circle class="satellite" cx="21" cy="12" r="1.3"></circle>
+      </g>
+    </svg>
+    <span class="name">Zahir Hossain</span>
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="background.html">Background</a>
+    <a href="#contact">Contact</a>
+    <span class="sep"></span>
+    <a class="icon-link" href="https://bd.linkedin.com/in/jahir-hossain" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 6.94a1.94 1.94 0 1 0 0-3.88 1.94 1.94 0 0 0 0 3.88ZM20.44 20h-3.38v-5.9c0-1.4-.03-3.2-1.95-3.2-1.96 0-2.26 1.53-2.26 3.1V20h-3.38V8.5h3.24v1.57h.05c.45-.85 1.56-1.75 3.21-1.75 3.43 0 4.06 2.26 4.06 5.2V20Z"/></svg>
+    </a>
+    <a class="icon-link" href="https://github.com/Zahir-Hossain" aria-label="GitHub">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.9c-2.78.62-3.37-1.38-3.37-1.38-.46-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.75 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.56 1.43.21 2.49.1 2.75.65.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.79-4.58 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.2C22 6.58 17.52 2 12 2Z"/></svg>
+    </a>
+    <span class="sep"></span>
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" type="button">
+      <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" style="display:none;"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19 12h2.4M4.9 19l1.7-1.7M17.4 6.6l1.7-1.7"/></svg>
+      <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.6 6.6 0 0 0 10.5 10.5Z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<div class="wrap">
+  <main id="main">
+
+    <div class="page-hero">
+      <p class="field">Background</p>
+      <h1>Research and professional experience, and the tools behind it.</h1>
+      <p>Experience relevant to scientific computing, machine learning, and AI evaluation, together with the technical background developed across coursework, projects, and research.</p>
+      <svg class="rule-wave" viewBox="0 0 360 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0,7 C30,0 45,14 75,7 C105,0 120,14 150,7 C180,0 195,14 225,7 C255,0 270,14 300,7 C315,3 330,10 360,7"></path></svg>
+    </div>
+
+    <section id="experience" style="border-top:none;padding-top:18px;">
+      <p class="section-label">Experience</p>
+      <h2 class="section-title">Research and professional work relevant to scientific computing, machine learning, and AI evaluation.</h2>
+      <div class="exp-grid"><div class="exp-item"><h3 class="role">AI Training and Evaluation</h3><p class="org">Professional AI training and evaluation work</p><p>General-purpose and domain-specific AI training and evaluation, including model response review, reasoning and error analysis, quality assessment, and structured feedback on task-specific performance and model behaviour.</p></div><div class="exp-item"><h3 class="role">Student Researcher</h3><p class="org">LaSSET, BRAC University</p><p>Worked on multispectral satellite imagery, image analysis, and machine learning and time-series approaches including Mask R-CNN, Random Forest, and LSTM. Contributed to the <a href="publications.html#pub">peer-reviewed ICECE 2020 publication ↗</a>.</p></div></div>
+    </section>
+
+    <section id="technical-background">
+      <p class="section-label">Technical Background</p>
+      <h2 class="section-title">Tools and methods I have used across coursework, projects, research, and professional work.</h2>
+      <div class="background-grid">
+        <div class="bg-item"><svg class="bg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/><path d="M10 7h4a3 3 0 0 1 3 3v4"/></svg><h4>Engineering</h4><p>Circuits, electronics, control, sensing, microcontrollers, monitoring systems, and practical measurement.</p></div>
+        <div class="bg-item"><svg class="bg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><h4>Scientific Computing</h4><p>Python, MATLAB, NumPy/SciPy, numerical modelling, FFT and signal analysis, image analysis, and time-series workflows.</p></div>
+        <div class="bg-item"><svg class="bg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="1.6"/><circle cx="5" cy="12" r="1.6"/><circle cx="5" cy="18" r="1.6"/><circle cx="12" cy="9" r="1.6"/><circle cx="12" cy="15" r="1.6"/><circle cx="19" cy="12" r="1.6"/><path d="M6.4 6.9L10.6 8.6M6.4 11.3L10.6 9.6M6.4 12.7L10.6 14.4M6.4 17.1L10.6 15.4M13.4 8.6L17.7 11.1M13.4 15.4L17.7 12.9"/></svg><h4>Machine Learning</h4><p>PyTorch, Random Forest, UTAE, Mask R-CNN, LSTM, semantic segmentation, uncertainty and reliability, and model evaluation.</p></div>
+        <div class="bg-item"><svg class="bg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="12" r="2"/><path d="M6 8v8M8 6h4a4 4 0 0 1 4 4"/></svg><h4>Research Workflow</h4><p>Git, GitHub, LaTeX, literature review, reproducible experiments, open data reproduction, environment tracking, and technical writing.</p></div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <svg class="footer-mark" viewBox="0 0 220 220" aria-hidden="true">
+        <circle cx="110" cy="110" r="2.4" fill="var(--ink)" stroke="none"></circle>
+        <ellipse cx="110" cy="110" rx="95" ry="40"></ellipse>
+        <ellipse cx="110" cy="110" rx="95" ry="40" transform="rotate(60 110 110)"></ellipse>
+        <ellipse cx="110" cy="110" rx="95" ry="40" transform="rotate(120 110 110)"></ellipse>
+      </svg>
+      <p class="name">Zahir Hossain</p>
+      <p class="alt-name">A S M Jahir Hossain</p>
+      <a href="mailto:hossainzahir2009@gmail.com">Email</a>
+      <a href="https://github.com/Zahir-Hossain">GitHub</a>
+      <a href="https://bd.linkedin.com/in/jahir-hossain">LinkedIn</a>
+    </footer>
+  </main>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Zahir Hossain", "item": "https://zahir-hossain.github.io/"},
+    {"@type": "ListItem", "position": 2, "name": "Background", "item": "https://zahir-hossain.github.io/background.html"}
+  ]
+}
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

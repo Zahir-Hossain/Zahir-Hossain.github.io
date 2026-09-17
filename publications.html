@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+  (function(){
+    try{
+      var t = localStorage.getItem('zh-theme');
+      if(!t){ t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'; }
+      if(t === 'dark'){ document.documentElement.setAttribute('data-theme','dark'); }
+    }catch(e){ document.documentElement.setAttribute('data-theme','dark'); }
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#121113" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f1e9d3" media="(prefers-color-scheme: light)">
+<title>Publications — Zahir Hossain</title>
+<meta name="description" content="Peer-reviewed conference publication by A. S. M. Jahir Hossain: agricultural analysis and crop yield prediction with multispectral satellite imagery and machine learning.">
+<link rel="canonical" href="https://zahir-hossain.github.io/publications.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Publications — Zahir Hossain">
+<meta property="og:description" content="Peer-reviewed conference publication: agricultural analysis and crop yield prediction with multispectral satellite imagery and machine learning.">
+<meta property="og:url" content="https://zahir-hossain.github.io/publications.html">
+<meta property="og:image" content="https://zahir-hossain.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Publications — Zahir Hossain">
+<meta name="twitter:description" content="Peer-reviewed conference publication: agricultural analysis and crop yield prediction with multispectral satellite imagery and machine learning.">
+<meta name="twitter:image" content="https://zahir-hossain.github.io/assets/og-image.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topnav">
+  <a class="brand" href="index.html">
+    <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+      <circle class="nucleus" cx="12" cy="12" r="1.6"></circle>
+      <g class="orbit-group">
+        <ellipse class="ring" cx="12" cy="12" rx="9" ry="4"></ellipse>
+        <circle class="satellite" cx="21" cy="12" r="1.3"></circle>
+      </g>
+    </svg>
+    <span class="name">Zahir Hossain</span>
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="background.html">Background</a>
+    <a href="#contact">Contact</a>
+    <span class="sep"></span>
+    <a class="icon-link" href="https://bd.linkedin.com/in/jahir-hossain" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 6.94a1.94 1.94 0 1 0 0-3.88 1.94 1.94 0 0 0 0 3.88ZM20.44 20h-3.38v-5.9c0-1.4-.03-3.2-1.95-3.2-1.96 0-2.26 1.53-2.26 3.1V20h-3.38V8.5h3.24v1.57h.05c.45-.85 1.56-1.75 3.21-1.75 3.43 0 4.06 2.26 4.06 5.2V20Z"/></svg>
+    </a>
+    <a class="icon-link" href="https://github.com/Zahir-Hossain" aria-label="GitHub">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.9c-2.78.62-3.37-1.38-3.37-1.38-.46-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.75 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.56 1.43.21 2.49.1 2.75.65.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.79-4.58 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.2C22 6.58 17.52 2 12 2Z"/></svg>
+    </a>
+    <span class="sep"></span>
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" type="button">
+      <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" style="display:none;"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19 12h2.4M4.9 19l1.7-1.7M17.4 6.6l1.7-1.7"/></svg>
+      <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.6 6.6 0 0 0 10.5 10.5Z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<div class="wrap">
+  <main id="main">
+
+    <div class="page-hero">
+      <p class="field">Publications</p>
+      <h1>Peer-reviewed conference work from my undergraduate research.</h1>
+      <p>Completed as part of my work with LaSSET at BRAC University, applying multispectral satellite imagery and machine learning to agricultural analysis.</p>
+      <svg class="rule-wave" viewBox="0 0 360 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0,7 C30,0 45,14 75,7 C105,0 120,14 150,7 C180,0 195,14 225,7 C255,0 270,14 300,7 C315,3 330,10 360,7"></path></svg>
+    </div>
+
+    <section id="pub" style="border-top:none;padding-top:18px;">
+      <div class="pub">
+        <div class="paper-layout">
+          <div class="paper-thumb"><img src="assets/thesis-cover-thumb.svg" alt="Thesis title page thumbnail"></div>
+          <div class="paper-copy">
+            <p class="venue-year">2020, 11th International Conference on Electrical and Computer Engineering (ICECE)</p>
+            <h3>"Agricultural Analysis and Crop Yield Prediction of Habiganj using Multispectral Bands of Satellite Imagery with Machine Learning"</h3>
+            <p class="authors">Fariha Shahrin, Labiba Zahin, Ramisa Rahman, A. S. M. Jahir Hossain, Abdulla Hil Kafi, and A. K. M. Abdul Malek Azad</p>
+            <div class="links"><a href="https://doi.org/10.1109/ICECE51571.2020.9393066">DOI ↗</a><a href="https://dspace.bracu.ac.bd/items/7ebc33d1-5420-47a2-bc09-f81bcd222cdc">Thesis ↗</a></div>
+            <p class="abstract">Habiganj's cropland was profiled from Sentinel multispectral bands, deriving vegetation indices used to relate spectral reflectance to crop condition. Regression and machine-learning models were then compared for predicting yield, evaluating which approach generalised best from the derived features.</p>
+            <ul class="keywords">
+              <li>Multispectral imagery</li>
+              <li>Crop yield prediction</li>
+              <li>Vegetation indices</li>
+              <li>Regression</li>
+              <li>Machine learning</li>
+            </ul>
+
+            <div class="cite-block">
+              <p class="cite-label"><span>Cite this work</span><button class="copy-btn" type="button">Copy BibTeX</button></p>
+              <pre>@inproceedings{shahrin2020agricultural,
+  author    = {Shahrin, Fariha and Zahin, Labiba and Rahman, Ramisa and Hossain, A. S. M. Jahir and Kafi, Abdulla Hil and Azad, A. K. M. Abdul Malek},
+  title     = {Agricultural Analysis and Crop Yield Prediction of Habiganj using Multispectral Bands of Satellite Imagery with Machine Learning},
+  booktitle = {2020 11th International Conference on Electrical and Computer Engineering (ICECE)},
+  year      = {2020},
+  doi       = {10.1109/ICECE51571.2020.9393066}
+}</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="related-line">Related project: the same multispectral pipeline is revisited, with a wider model comparison, in <a href="research.html#multispectral">Multispectral Data Analysis and Modelling ↗</a></p>
+    </section>
+
+    <footer id="contact">
+      <svg class="footer-mark" viewBox="0 0 220 220" aria-hidden="true">
+        <circle cx="110" cy="110" r="2.4" fill="var(--ink)" stroke="none"></circle>
+        <ellipse cx="110" cy="110" rx="95" ry="40"></ellipse>
+        <ellipse cx="110" cy="110" rx="95" ry="40" transform="rotate(60 110 110)"></ellipse>
+        <ellipse cx="110" cy="110" rx="95" ry="40" transform="rotate(120 110 110)"></ellipse>
+      </svg>
+      <p class="name">Zahir Hossain</p>
+      <p class="alt-name">A S M Jahir Hossain</p>
+      <a href="mailto:hossainzahir2009@gmail.com">Email</a>
+      <a href="https://github.com/Zahir-Hossain">GitHub</a>
+      <a href="https://bd.linkedin.com/in/jahir-hossain">LinkedIn</a>
+    </footer>
+  </main>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Agricultural Analysis and Crop Yield Prediction of Habiganj using Multispectral Bands of Satellite Imagery with Machine Learning",
+  "datePublished": "2020",
+  "author": [
+    {"@type": "Person", "name": "Fariha Shahrin"},
+    {"@type": "Person", "name": "Labiba Zahin"},
+    {"@type": "Person", "name": "Ramisa Rahman"},
+    {"@type": "Person", "name": "A. S. M. Jahir Hossain"},
+    {"@type": "Person", "name": "Abdulla Hil Kafi"},
+    {"@type": "Person", "name": "A. K. M. Abdul Malek Azad"}
+  ],
+  "isPartOf": {
+    "@type": "PublicationEvent",
+    "name": "11th International Conference on Electrical and Computer Engineering (ICECE 2020)"
+  },
+  "sameAs": "https://doi.org/10.1109/ICECE51571.2020.9393066"
+}
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

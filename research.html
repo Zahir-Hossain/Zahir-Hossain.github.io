@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<script>
+  (function(){
+    try{
+      var t = localStorage.getItem('zh-theme');
+      if(!t){ t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'; }
+      if(t === 'dark'){ document.documentElement.setAttribute('data-theme','dark'); }
+    }catch(e){ document.documentElement.setAttribute('data-theme','dark'); }
+  })();
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#121113" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f1e9d3" media="(prefers-color-scheme: light)">
+<title>Research &amp; Projects — Zahir Hossain</title>
+<meta name="description" content="Selected research and projects by A. S. M. Jahir Hossain, spanning photonics, remote sensing, machine learning reliability, and embedded systems.">
+<link rel="canonical" href="https://zahir-hossain.github.io/research.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Research &amp; Projects — Zahir Hossain">
+<meta property="og:description" content="Selected research and projects spanning photonics, remote sensing, machine learning reliability, and embedded systems.">
+<meta property="og:url" content="https://zahir-hossain.github.io/research.html">
+<meta property="og:image" content="https://zahir-hossain.github.io/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Research &amp; Projects — Zahir Hossain">
+<meta name="twitter:description" content="Selected research and projects spanning photonics, remote sensing, machine learning reliability, and embedded systems.">
+<meta name="twitter:image" content="https://zahir-hossain.github.io/assets/og-image.png">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topnav">
+  <a class="brand" href="index.html">
+    <svg class="brand-mark" viewBox="0 0 24 24" aria-hidden="true">
+      <circle class="nucleus" cx="12" cy="12" r="1.6"></circle>
+      <g class="orbit-group">
+        <ellipse class="ring" cx="12" cy="12" rx="9" ry="4"></ellipse>
+        <circle class="satellite" cx="21" cy="12" r="1.3"></circle>
+      </g>
+    </svg>
+    <span class="name">Zahir Hossain</span>
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="background.html">Background</a>
+    <a href="#contact">Contact</a>
+    <span class="sep"></span>
+    <a class="icon-link" href="https://bd.linkedin.com/in/jahir-hossain" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24"><path d="M6.94 8.5H3.56V20h3.38V8.5ZM5.25 6.94a1.94 1.94 0 1 0 0-3.88 1.94 1.94 0 0 0 0 3.88ZM20.44 20h-3.38v-5.9c0-1.4-.03-3.2-1.95-3.2-1.96 0-2.26 1.53-2.26 3.1V20h-3.38V8.5h3.24v1.57h.05c.45-.85 1.56-1.75 3.21-1.75 3.43 0 4.06 2.26 4.06 5.2V20Z"/></svg>
+    </a>
+    <a class="icon-link" href="https://github.com/Zahir-Hossain" aria-label="GitHub">
+      <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.2c0 4.5 2.87 8.32 6.84 9.67.5.1.68-.22.68-.49v-1.9c-2.78.62-3.37-1.38-3.37-1.38-.46-1.2-1.11-1.52-1.11-1.52-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.32.1-2.75 0 0 .84-.28 2.75 1.05a9.3 9.3 0 0 1 5 0c1.9-1.33 2.74-1.05 2.74-1.05.56 1.43.21 2.49.1 2.75.65.72 1.03 1.63 1.03 2.75 0 3.93-2.35 4.79-4.58 5.05.36.32.68.94.68 1.9v2.82c0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.2C22 6.58 17.52 2 12 2Z"/></svg>
+    </a>
+    <span class="sep"></span>
+    <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" type="button">
+      <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" style="display:none;"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19v2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M2.5 12h2.4M19 12h2.4M4.9 19l1.7-1.7M17.4 6.6l1.7-1.7"/></svg>
+      <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.6 6.6 0 0 0 10.5 10.5Z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<div class="wrap">
+  <main id="main">
+
+    <div class="page-hero">
+      <p class="field">Research &amp; Projects</p>
+      <h1>A selection of published research, computational work, engineering projects, and current research.</h1>
+      <p>Work spans experimental reproduction, applied machine learning, and embedded systems &mdash; the computational and engineering foundation for the experimental physics training I am pursuing next.</p>
+      <svg class="rule-wave" viewBox="0 0 360 14" preserveAspectRatio="none" aria-hidden="true"><path d="M0,7 C30,0 45,14 75,7 C105,0 120,14 150,7 C180,0 195,14 225,7 C255,0 270,14 300,7 C315,3 330,10 360,7"></path></svg>
+    </div>
+
+    <section id="research" style="border-top:none;padding-top:18px;">
+      <div class="entries">
+        <div class="entry" id="microcomb"><div class="diagram"><svg viewBox="0 0 160 90" aria-hidden="true"><circle cx="55" cy="45" r="30" fill="none" stroke="var(--violet)" stroke-width="1.3"/><g stroke="var(--violet)" stroke-width="1.1" opacity="0.9"><line x1="105" y1="75" x2="105" y2="55"/><line x1="113" y1="75" x2="113" y2="25"/><line x1="121" y1="75" x2="121" y2="50"/><line x1="129" y1="75" x2="129" y2="30"/><line x1="137" y1="75" x2="137" y2="60"/></g></svg></div><div class="cat">Computational reproduction, photonics</div><h3>Breathing Kerr Microcomb Reproduction</h3><p>Reproduced published MgF₂ stationary and breathing-soliton spectra from the authors' open data, then implemented a normalized Lugiato&ndash;Lefever model and detuning stability study.</p><a class="link" href="https://github.com/Zahir-Hossain/microcomb-breather-reproduction">Project repository ↗</a></div>
+
+        <div class="entry" id="sensor-placement"><div class="diagram"><svg viewBox="0 0 160 90" aria-hidden="true"><path d="M10,75 C55,55 60,25 110,15" fill="none" stroke="var(--ink-soft)" stroke-width="1" opacity="0.5"/><g fill="var(--ink-soft)"><circle cx="45" cy="55" r="4"/><circle cx="80" cy="28" r="4"/><circle cx="115" cy="45" r="4"/></g></svg></div><div class="cat">Proposed extension and toy simulation, May to June 2026</div><h3>Prediction- and Uncertainty-Aware Sensor Placement</h3><p>A basic toy simulation extending a published stochastic barrier-coverage framework with future-route and uncertainty-aware scenarios, explored in MATLAB.</p><a class="link" href="https://github.com/Zahir-Hossain/stochastic-sensor-placement-extension">Project repository ↗</a></div>
+
+        <div class="entry" id="reliability"><div class="diagram"><svg viewBox="0 0 160 90" aria-hidden="true"><path d="M10,75 Q55,20 80,45 T150,10" fill="none" stroke="var(--amber)" stroke-width="1.5"/><line x1="10" y1="82" x2="150" y2="82" stroke="var(--rule)" stroke-width="1"/></svg></div><div class="cat">Ongoing project, reliability</div><h3>Reliability-Aware Model Evaluation</h3><p>Studying reliability under distribution shift, and whether stronger predictive performance is matched by more dependable, confidence-based behaviour.</p><a class="link" href="https://github.com/Zahir-Hossain/geospatial-ai-reliability">Project repository ↗</a></div>
+
+        <div class="entry" id="monitoring"><div class="diagram"><svg viewBox="0 0 160 90" aria-hidden="true"><polyline points="10,60 30,50 30,25 55,25 55,70 80,70 80,15 105,15 105,50 130,50 130,38 150,38" fill="none" stroke="#8f8a78" stroke-width="1.2"/><circle cx="55" cy="25" r="3" fill="var(--ink-soft)"/></svg></div><div class="cat">Engineering project, sensing</div><h3>Environmental Monitoring System</h3><p>Academic engineering work in sensing, microcontrollers, monitoring, and control, with practical experience in electronics and system integration.</p></div>
+
+        <div class="entry wide" id="crop-segmentation"><div class="diagram"><svg viewBox="0 0 220 150" aria-hidden="true"><rect x="0" y="0" width="220" height="150" fill="#e6e1d2"/><rect x="0" y="0" width="100" height="63" fill="#8f9a6e"/><rect x="100" y="0" width="120" height="45" fill="#a4ac82"/><rect x="0" y="63" width="62" height="87" fill="#b4a173"/><rect x="62" y="63" width="66" height="57" fill="#7c8a6c"/><rect x="128" y="45" width="92" height="105" fill="#697d5c"/></svg></div><div><div class="cat">Scientific ML, semantic segmentation</div><h3>Multi-Temporal Crop Type Semantic Segmentation</h3><p>Built a reproducible multi-temporal semantic segmentation workflow on Sentinel-2 image sequences, comparing an engineered-feature Random Forest baseline with a compact UTAE model. Validation mIoU improved from 0.446 to 0.572; the selected model achieved 0.473 mIoU on the held-out split.</p></div></div>
+
+        <div class="entry wide" id="multispectral"><div class="diagram"><svg viewBox="0 0 220 150" aria-hidden="true"><rect x="0" y="0" width="220" height="150" fill="var(--bg)"/><g><rect x="24" y="30" width="14" height="90" fill="var(--clayblue)" opacity="0.85"/><rect x="44" y="30" width="14" height="90" fill="var(--sage)" opacity="0.85"/><rect x="64" y="30" width="14" height="90" fill="#b25b4a" opacity="0.85"/><rect x="84" y="30" width="14" height="90" fill="var(--amber)" opacity="0.85"/></g><g font-family="-apple-system,Arial,sans-serif" font-size="7" fill="var(--ink-soft)"><text x="31" y="128" text-anchor="middle">B</text><text x="51" y="128" text-anchor="middle">G</text><text x="71" y="128" text-anchor="middle">R</text><text x="91" y="128" text-anchor="middle">NIR</text></g><polyline points="120,110 138,95 156,70 174,50 196,38" fill="none" stroke="var(--violet)" stroke-width="1.6"/><g fill="var(--violet)"><circle cx="120" cy="110" r="2"/><circle cx="138" cy="95" r="2"/><circle cx="156" cy="70" r="2"/><circle cx="174" cy="50" r="2"/><circle cx="196" cy="38" r="2"/></g><line x1="112" y1="120" x2="210" y2="120" stroke="var(--rule)" stroke-width="1"/><line x1="112" y1="30" x2="112" y2="120" stroke="var(--rule)" stroke-width="1"/></svg></div><div><div class="cat">Published research, ML application for satellite data</div><h3>Multispectral Data Analysis and Modelling</h3><p>Peer-reviewed work using multispectral observations, image analysis methods, regression, and time-series forecasting, with comparative evaluation across multiple modelling approaches.</p><a class="link" href="publications.html#pub">Publication ↗</a></div></div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <svg class="footer-mark" viewBox="0 0 220 220" aria-hidden="true">
+        <circle cx="110" cy="110" r="2.4" fill="var(--ink)" stroke="none"></circle>
+        <ellipse cx="110" cy="110" rx="95" ry="40"></ellipse>
+        <ellipse cx="110" cy="110" rx="95" ry="40" transform="rotate(60 110 110)"></ellipse>
+        <ellipse cx="110" cy="110" rx="95" ry="40" transform="rotate(120 110 110)"></ellipse>
+      </svg>
+      <p class="name">Zahir Hossain</p>
+      <p class="alt-name">A S M Jahir Hossain</p>
+      <a href="mailto:hossainzahir2009@gmail.com">Email</a>
+      <a href="https://github.com/Zahir-Hossain">GitHub</a>
+      <a href="https://bd.linkedin.com/in/jahir-hossain">LinkedIn</a>
+    </footer>
+  </main>
+</div>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Zahir Hossain", "item": "https://zahir-hossain.github.io/"},
+    {"@type": "ListItem", "position": 2, "name": "Research & Projects", "item": "https://zahir-hossain.github.io/research.html"}
+  ]
+}
+</script>
+<script src="assets/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+/* ============================================================
+   Zahir Hossain — academic portfolio
+   Shared stylesheet. Palette and type are unchanged from the
+   original single-page design; this file only adds the
+   structure needed for a multi-page site (nav states, page
+   headers) and a small set of deliberate, restrained motifs.
+   ============================================================ */
+
+:root{
+  --bg:#f1e9d3;
+  --bg-2:#ebe0c1;
+  --panel:#f9f4e5;
+  --panel-2:#f5eeda;
+  --ink:#2b2216;
+  --ink-soft:#6b5c42;
+  --rule:#ddd0ac;
+  --sage:#5b7360;
+  --violet:#7266ab;
+  --amber:#a1702e;
+  --clayblue:#4f6a72;
+}
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#121113;
+  --bg-2:#0c0b0d;
+  --panel:#1a191b;
+  --panel-2:#201f21;
+  --ink:#ece7dc;
+  --ink-soft:#938d80;
+  --rule:#302e2c;
+  --sage:#8ba87f;
+  --violet:#a297df;
+  --amber:#d9a441;
+  --clayblue:#7ba0aa;
+}
+html:not([data-theme="dark"]){color-scheme:light;}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+body{
+  margin:0;color:var(--ink);font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;line-height:1.5;
+  overflow-x:hidden;
+  overflow-wrap:break-word;
+  background:
+    radial-gradient(ellipse 900px 500px at 10% -10%, rgba(114,102,171,0.06), transparent 55%),
+    radial-gradient(ellipse 700px 600px at 100% 10%, rgba(184,133,58,0.07), transparent 55%),
+    var(--bg);
+  background-attachment:fixed;
+  transition:background-color .2s, color .2s;
+  position:relative;
+}
+body::before{
+  content:"";position:absolute;top:0;left:0;right:0;bottom:0;z-index:0;pointer-events:none;
+  opacity:0.1;
+  background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMTUwIj4KPGZpbHRlciBpZD0ibiI+PGZlVHVyYnVsZW5jZSB0eXBlPSJmcmFjdGFsTm9pc2UiIGJhc2VGcmVxdWVuY3k9IjAuNyIgbnVtT2N0YXZlcz0iMyIgc3RpdGNoVGlsZXM9InN0aXRjaCIgcmVzdWx0PSJ0Ii8+CjxmZUNvbG9yTWF0cml4IGluPSJ0IiB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMC41NSAwIDAgMCAwICAwLjQyIDAgMCAwIDAgIDAuMjUgMCAwIDAgMCAgMCAwIDAgMC45IDAiLz48L2ZpbHRlcj4KPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsdGVyPSJ1cmwoI24pIi8+PC9zdmc+");
+  background-repeat:repeat;
+  background-size:150px 150px;
+  mix-blend-mode:multiply;
+}
+body::after{
+  content:"";position:absolute;top:0;left:0;right:0;bottom:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 50% at 8% 12%, rgba(120,90,45,0.06), transparent 60%),
+    radial-gradient(ellipse 60% 45% at 92% 85%, rgba(120,90,45,0.05), transparent 60%),
+    radial-gradient(ellipse 55% 40% at 88% 15%, rgba(120,90,45,0.04), transparent 55%),
+    radial-gradient(ellipse 90% 70% at 50% 100%, transparent 50%, rgba(90,70,35,0.08) 100%),
+    radial-gradient(ellipse 90% 70% at 50% 0%, transparent 50%, rgba(90,70,35,0.06) 100%),
+    radial-gradient(ellipse 75% 100% at 0% 50%, transparent 55%, rgba(90,70,35,0.05) 100%),
+    radial-gradient(ellipse 75% 100% at 100% 50%, transparent 55%, rgba(90,70,35,0.05) 100%);
+}
+html[data-theme="dark"] body::after{background:none;}
+html[data-theme="dark"] body::before{
+  opacity:0.65;
+  mix-blend-mode:normal;
+  background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNDAiIGhlaWdodD0iMzQwIj48ZyBmaWxsPSIjOTQ4ZDdlIj48Y2lyY2xlIGN4PSIxOCIgY3k9IjQyIiByPSIwLjciLz48Y2lyY2xlIGN4PSI3NiIgY3k9IjEyIiByPSIwLjUiLz48Y2lyY2xlIGN4PSIxMjEiIGN5PSI4OCIgcj0iMC44Ii8+PGNpcmNsZSBjeD0iMTYzIiBjeT0iMzAiIHI9IjAuNSIvPjxjaXJjbGUgY3g9IjIwNSIgY3k9IjEyMCIgcj0iMC42Ii8+PGNpcmNsZSBjeD0iMjUwIiBjeT0iNTUiIHI9IjAuNSIvPjxjaXJjbGUgY3g9IjI4OCIgY3k9Ijk1IiByPSIwLjciLz48Y2lyY2xlIGN4PSIzMjAiIGN5PSIyMCIgcj0iMC41Ii8+PGNpcmNsZSBjeD0iNDAiIGN5PSIxNTAiIHI9IjAuNiIvPjxjaXJjbGUgY3g9Ijk1IiBjeT0iMTkwIiByPSIwLjUiLz48Y2lyY2xlIGN4PSIxNDAiIGN5PSIxNjAiIHI9IjAuNyIvPjxjaXJjbGUgY3g9IjE4NSIgY3k9IjIxMCIgcj0iMC41Ii8+PGNpcmNsZSBjeD0iMjMwIiBjeT0iMTc1IiByPSIwLjYiLz48Y2lyY2xlIGN4PSIyNzAiIGN5PSIyMzAiIHI9IjAuNSIvPjxjaXJjbGUgY3g9IjMwNSIgY3k9IjE5MCIgcj0iMC43Ii8+PGNpcmNsZSBjeD0iMjUiIGN5PSIyNjAiIHI9IjAuNSIvPjxjaXJjbGUgY3g9IjcwIiBjeT0iMzAwIiByPSIwLjYiLz48Y2lyY2xlIGN4PSIxMTUiIGN5PSIyNTAiIHI9IjAuNSIvPjxjaXJjbGUgY3g9IjE2MCIgY3k9IjI5MCIgcj0iMC43Ii8+PGNpcmNsZSBjeD0iMjEwIiBjeT0iMjYwIiByPSIwLjUiLz48Y2lyY2xlIGN4PSIyNTUiIGN5PSIzMTAiIHI9IjAuNiIvPjxjaXJjbGUgY3g9IjMwMCIgY3k9IjI4MCIgcj0iMC41Ii8+PGNpcmNsZSBjeD0iMzMwIiBjeT0iMjUwIiByPSIwLjYiLz48Y2lyY2xlIGN4PSI1NSIgY3k9Ijc1IiByPSIwLjQiLz48Y2lyY2xlIGN4PSIxODAiIGN5PSI0NSIgcj0iMC40Ii8+PGNpcmNsZSBjeD0iMjQ1IiBjeT0iMTQ1IiByPSIwLjQiLz48Y2lyY2xlIGN4PSIxMCIgY3k9IjE5MCIgcj0iMC40Ii8+PGNpcmNsZSBjeD0iMTUwIiBjeT0iMTIwIiByPSIwLjQiLz48L2c+PC9zdmc+");
+  background-repeat:repeat;
+  background-size:340px 340px;
+}
+.topnav, .wrap{position:relative;z-index:1;}
+.wrap{max-width:900px;margin:0 auto;padding:0 26px;}
+a{color:inherit;}
+
+/* -- anchors land clear of the sticky header instead of under it -- */
+[id]{scroll-margin-top:86px;}
+
+/* -- visible, on-brand keyboard focus (WCAG) -- */
+a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:1px;}
+
+/* -- skip link: hidden until focused, for keyboard/screen-reader users -- */
+.skip-link{
+  position:absolute;left:12px;top:-60px;z-index:100;
+  background:var(--panel);color:var(--ink);border:1px solid var(--rule);
+  padding:10px 16px;font-size:12.5px;text-decoration:none;
+  transition:top .15s ease;
+}
+.skip-link:focus{top:12px;}
+
+.topnav{
+  position:sticky;top:0;z-index:20;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 26px;
+  background:rgba(242,240,234,0.82);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule);
+}
+html[data-theme="dark"] .topnav{background:rgba(18,17,19,0.82);}
+.topnav .brand{display:flex;align-items:center;gap:9px;text-decoration:none;}
+.topnav .name{font-family:"Iowan Old Style",Georgia,serif;font-size:14px;white-space:nowrap;color:var(--ink);}
+.topnav nav{display:flex;align-items:center;gap:16px;font-size:11.5px;flex-wrap:wrap;}
+.topnav nav a{text-decoration:none;color:#5b4636;}
+.topnav nav a:hover{color:#3f2f22;}
+html[data-theme="dark"] .topnav nav a{color:#c9ad8b;}
+html[data-theme="dark"] .topnav nav a:hover{color:#ecd9bc;}
+.topnav nav a.active{color:var(--ink);border-bottom:1px solid var(--amber);padding-bottom:3px;}
+.topnav nav a.active:hover{color:var(--ink);}
+.topnav nav .sep{width:1px;height:14px;background:var(--rule);}
+.icon-link{display:flex;align-items:center;}
+.icon-link svg{width:16px;height:16px;fill:var(--ink-soft);stroke:none;}
+.icon-link:hover svg{fill:var(--ink);}
+.theme-toggle{background:none;border:none;cursor:pointer;padding:0;display:flex;align-items:center;justify-content:center;}
+.theme-toggle svg{width:16px;height:16px;stroke:var(--ink-soft);}
+.theme-toggle:hover svg{stroke:var(--ink);}
+
+/* -- brand mark: a small orbiting motif standing in for the site's
+      photonics / instrumentation thread. One slow, quiet loop. -- */
+.brand-mark{width:18px;height:18px;flex:none;overflow:visible;}
+.brand-mark .ring{fill:none;stroke:var(--ink-soft);stroke-width:1;opacity:0.55;}
+.brand-mark .nucleus{fill:var(--amber);}
+.brand-mark .orbit-group{transform-origin:12px 12px;animation:orbitSpin 16s linear infinite;}
+.brand-mark .satellite{fill:var(--violet);}
+@keyframes orbitSpin{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+main{padding:0;}
+.hero{padding:44px 0 40px;max-width:900px;position:relative;}
+.hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:stretch;position:relative;}
+.hero-left{max-width:560px;}
+.hero .field{font-size:11.5px;color:var(--ink-soft);letter-spacing:0.03em;margin:0 0 14px;}
+.hero h1{font-family:"Iowan Old Style",Georgia,serif;font-size:clamp(24px,3vw,29px);font-weight:400;line-height:1.28;margin:0 0 12px;}
+.hero p.lede{font-size:13.3px;color:var(--ink-soft);margin:0 0 22px;line-height:1.58;}
+.hero .cta a{font-size:12.5px;text-decoration:none;margin-right:18px;border-bottom:1px solid var(--ink);padding-bottom:2px;}
+.hero-right{position:relative;padding-top:64px;display:flex;flex-direction:column;justify-content:flex-start;}
+.hero-right .grad-wave{position:absolute;top:-30px;right:-40px;width:340px;height:220px;opacity:0.22;pointer-events:none;z-index:0;}
+.hero-right .grad-tag{position:relative;z-index:1;font-family:"Iowan Old Style",Georgia,serif;font-size:18px;color:var(--ink);margin:0 0 18px;}
+.hero .interests{position:relative;z-index:1;display:flex;flex-direction:column;gap:10px;padding:0;list-style:none;margin:0;}
+.hero .interests li{font-size:11.5px;color:var(--ink-soft);letter-spacing:0.02em;display:flex;align-items:center;gap:9px;}
+.hero .interests li svg{flex:none;width:15px;height:15px;stroke:var(--ink-soft);opacity:0.85;}
+
+/* -- the hero's photon: a single, slow "breathing" pulse, a quiet nod
+      to the breathing-soliton work described in Research. -- */
+.grad-wave .photon{animation:photonBreathe 4.8s ease-in-out infinite;transform-origin:center;transform-box:fill-box;}
+@keyframes photonBreathe{
+  0%,100%{ r:3.1; opacity:0.75; }
+  50%{ r:4.6; opacity:1; }
+}
+
+/* -- one orchestrated entrance for the hero, on load only -- */
+.hero-left{animation:fadeUp .7s ease-out both;}
+.hero-right{animation:fadeUp .7s ease-out .12s both;}
+.page-hero{animation:fadeUp .6s ease-out both;}
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(8px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+section{padding:42px 0;border-top:1px solid var(--rule);}
+.section-label{font-size:12px;color:var(--ink-soft);margin:0 0 8px;letter-spacing:0.02em;}
+.section-title{font-family:"Iowan Old Style",Georgia,serif;font-size:20px;font-weight:400;margin:0 0 28px;max-width:600px;line-height:1.4;}
+
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr;}.hero-right .grad-wave{display:none;}}
+
+/* -- interior page header: same voice as the hero, condensed -- */
+.page-hero{padding:40px 0 6px;max-width:640px;}
+.page-hero .field{font-size:11.5px;color:var(--ink-soft);letter-spacing:0.03em;margin:0 0 14px;}
+.page-hero h1{font-family:"Iowan Old Style",Georgia,serif;font-size:clamp(22px,2.8vw,27px);font-weight:400;line-height:1.32;margin:0 0 12px;}
+.page-hero p{font-size:13.3px;color:var(--ink-soft);margin:0;line-height:1.58;max-width:560px;}
+.page-hero .rule-wave{display:block;width:100%;max-width:360px;height:14px;margin-top:22px;opacity:0.5;}
+.page-hero .rule-wave path{fill:none;stroke:var(--ink-soft);stroke-width:1;}
+
+.entries{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.entry{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--rule);padding:22px;display:flex;flex-direction:column;box-shadow:0 8px 18px -14px rgba(40,35,25,0.25);}
+.entry.wide{grid-column:1/-1;flex-direction:row;gap:30px;align-items:center;}
+.entry .diagram{width:100%;aspect-ratio:16/9;background:var(--bg);border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:inset 0 1px 3px rgba(0,0,0,0.04);}
+.entry.wide .diagram{width:220px;height:150px;aspect-ratio:auto;flex:none;margin-bottom:0;}
+.entry .diagram svg,.entry .diagram .imgs{width:88%;height:88%;}
+.entry.wide .diagram svg,.entry.wide .diagram .imgs{width:100%;height:100%;}
+.entry .cat{font-size:11.5px;color:var(--ink-soft);margin-bottom:8px;}
+.entry h3{font-family:"Iowan Old Style",Georgia,serif;font-size:16.5px;font-weight:400;margin:0 0 8px;}
+.entry p{font-size:12.3px;line-height:1.58;color:var(--ink-soft);margin:0 0 10px;}
+.entry a.link{font-size:12.5px;text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;align-self:flex-start;transition:border-color .15s ease,color .15s ease;}
+.entry a.link:hover{border-color:var(--amber);color:var(--amber);}
+.entry .diagram{transition:border-color .2s ease;}
+.entry:hover .diagram{border-color:var(--ink-soft);}
+.imgs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule);width:100%;height:100%;}
+.imgs img{width:100%;height:100%;object-fit:cover;display:block;}
+.imgs.muted img{filter:grayscale(1) contrast(1.08) brightness(1.05) sepia(0.18);opacity:0.9;}
+
+/* -- home page highlights: reuses the entry card language at a glance -- */
+.entries.highlights-grid{grid-template-columns:repeat(3,1fr);}
+.highlights-foot{margin-top:22px;}
+.highlights-foot a{font-size:12.5px;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:2px;}
+@media (max-width:900px){.entries.highlights-grid{grid-template-columns:1fr;}}
+
+/* -- home page: a short summary card per other page, so Home stands on
+      its own as an index of the whole site -- */
+.page-summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.page-summary-card{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--rule);padding:24px;box-shadow:0 8px 18px -14px rgba(40,35,25,0.25);display:flex;flex-direction:column;transition:border-color .15s ease;}
+.page-summary-card:hover{border-color:var(--ink-soft);}
+.page-summary-card svg{width:26px;height:26px;margin-bottom:14px;stroke:var(--amber);flex:none;}
+.page-summary-card h3{font-family:"Iowan Old Style",Georgia,serif;font-size:16.5px;font-weight:400;margin:0 0 8px;}
+.page-summary-card p{font-size:12.3px;line-height:1.58;color:var(--ink-soft);margin:0 0 14px;flex:1;}
+.page-summary-card a{font-size:12.5px;text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;align-self:flex-start;transition:border-color .15s ease,color .15s ease;}
+.page-summary-card a:hover{border-color:var(--amber);color:var(--amber);}
+@media (max-width:900px){.page-summary-grid{grid-template-columns:1fr;}}
+
+/* -- background grid: a small icon per category -- */
+.bg-item .bg-icon{width:22px;height:22px;stroke:var(--clayblue);margin-bottom:12px;display:block;}
+.bg-item:nth-child(2) .bg-icon{stroke:var(--sage);}
+.bg-item:nth-child(3) .bg-icon{stroke:var(--violet);}
+.bg-item:nth-child(4) .bg-icon{stroke:var(--amber);}
+
+.pub{width:100%;max-width:none;background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--rule);padding:32px 36px;position:relative;box-shadow:0 12px 28px -16px rgba(40,35,25,0.25);}
+.pub .paper-layout{display:grid;grid-template-columns:70px minmax(0,1fr);gap:24px;align-items:start;}
+.pub .paper-thumb{width:68px;aspect-ratio:210/270;overflow:hidden;background:#f4f1e9;border:1px solid rgba(0,0,0,.1);box-shadow:0 5px 18px rgba(0,0,0,.18);}
+html[data-theme="dark"] .pub .paper-thumb{border-color:rgba(255,255,255,.08);box-shadow:0 6px 20px rgba(0,0,0,.35);}
+.pub .paper-thumb img{width:100%;height:100%;display:block;object-fit:cover;}
+.pub .venue-year{font-size:12px;color:var(--ink-soft);margin:0 0 10px;letter-spacing:0.02em;}
+.pub h3{font-family:"Iowan Old Style",Georgia,serif;font-style:italic;font-size:19px;font-weight:400;line-height:1.5;margin:0 0 10px;}
+.pub .authors{font-size:12.2px;line-height:1.55;color:var(--ink-soft);margin:0 0 14px;}
+.pub .links a{font-size:12.5px;text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;margin-right:20px;transition:border-color .15s ease,color .15s ease;}
+.pub .links a:hover{border-color:var(--amber);color:var(--amber);}
+
+/* -- cite block: a plain, copyable BibTeX entry -- */
+.cite-block{margin-top:22px;}
+.cite-block .cite-label{font-size:11.5px;color:var(--ink-soft);letter-spacing:0.02em;margin:0 0 8px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.cite-block pre{
+  margin:0;padding:16px 18px;background:var(--bg-2);border:1px solid var(--rule);
+  font-family:ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;font-size:11.8px;line-height:1.6;
+  color:var(--ink-soft);overflow-x:auto;white-space:pre;
+}
+.cite-block .copy-btn{
+  font-size:11px;color:var(--ink-soft);background:none;border:1px solid var(--rule);
+  padding:4px 10px;cursor:pointer;font-family:inherit;transition:border-color .15s ease,color .15s ease;
+}
+.cite-block .copy-btn:hover{border-color:var(--amber);color:var(--amber);}
+.related-line{font-size:12.5px;color:var(--ink-soft);margin:22px 0 0;}
+.related-line a{border-bottom:1px solid var(--rule);text-decoration:none;padding-bottom:2px;transition:border-color .15s ease,color .15s ease;}
+.related-line a:hover{border-color:var(--amber);color:var(--amber);}
+
+.pub .abstract{font-size:13px;line-height:1.62;color:var(--ink-soft);margin:16px 0 0;max-width:640px;}
+.pub .keywords{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 0;padding:0;}
+.pub .keywords li{font-size:11px;letter-spacing:0.02em;color:var(--ink-soft);border:1px solid var(--rule);padding:5px 11px;background:var(--bg-2);}
+
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.exp-item{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--rule);padding:22px;box-shadow:0 8px 18px -14px rgba(40,35,25,0.25);position:relative;}
+.exp-item .role{font-family:"Iowan Old Style",Georgia,serif;font-size:18px;margin:0 0 4px;}
+.exp-item .org{font-size:12.5px;color:var(--ink-soft);margin-bottom:12px;}
+.exp-item p{font-size:13.3px;color:var(--ink-soft);line-height:1.6;margin:0;}
+
+.background-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.bg-item{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--rule);padding:26px 22px;box-shadow:0 8px 18px -14px rgba(40,35,25,0.25);}
+.bg-item h4{font-family:"Iowan Old Style",Georgia,serif;font-size:16px;margin:0 0 10px;font-weight:400;}
+.bg-item p{font-size:12.3px;color:var(--ink-soft);line-height:1.6;margin:0;}
+
+.direction-list{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.direction-list > div{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--rule);padding:24px;box-shadow:0 8px 18px -14px rgba(40,35,25,0.25);}
+.direction-list h4{font-size:11.5px;color:var(--ink-soft);margin:0 0 10px;}
+.direction-list p{font-family:"Iowan Old Style",Georgia,serif;font-size:16px;margin:0;line-height:1.55;}
+
+/* -- graduate school interests: what kind of program and opportunities
+      are being pursued, for advisors and admissions readers -- */
+.gradschool-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.gradschool-item{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--rule);padding:26px 22px;box-shadow:0 8px 18px -14px rgba(40,35,25,0.25);}
+.gradschool-item .gs-icon{width:22px;height:22px;stroke:var(--violet);margin-bottom:12px;display:block;}
+.gradschool-item:nth-child(2) .gs-icon{stroke:var(--amber);}
+.gradschool-item:nth-child(3) .gs-icon{stroke:var(--sage);}
+.gradschool-item:nth-child(4) .gs-icon{stroke:var(--clayblue);}
+.gradschool-item h4{font-family:"Iowan Old Style",Georgia,serif;font-size:16px;margin:0 0 10px;font-weight:400;}
+.gradschool-item p{font-size:12.3px;color:var(--ink-soft);line-height:1.6;margin:0;}
+
+footer{padding:48px 0 64px;position:relative;overflow:hidden;}
+footer .name{font-family:"Iowan Old Style",Georgia,serif;font-size:20px;margin:0 0 6px;}
+footer .alt-name{font-size:11px;letter-spacing:.07em;color:var(--ink-soft);opacity:.72;margin:0 0 20px;}
+footer .role{font-size:12.5px;color:var(--ink-soft);margin-bottom:22px;}
+footer a{font-size:12.5px;text-decoration:none;border-bottom:1px solid var(--rule);padding-bottom:2px;margin-right:22px;}
+footer .footer-mark{position:absolute;right:-30px;bottom:-30px;width:220px;height:220px;opacity:0.05;pointer-events:none;z-index:0;}
+footer p, footer a{position:relative;z-index:1;}
+footer .footer-mark circle, footer .footer-mark ellipse{fill:none;stroke:var(--ink);stroke-width:1;}
+
+@media (max-width:900px){
+  .direction-list,.gradschool-grid{grid-template-columns:1fr;}
+  .topnav{flex-direction:column;align-items:flex-start;gap:12px;}
+  .topnav nav{gap:14px;}
+}
+@media (min-width:641px) and (max-width:900px){
+  .entries,.exp-grid,.background-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:640px){
+  .entries,.exp-grid,.background-grid{grid-template-columns:1fr;}
+  .entry.wide{flex-direction:column;align-items:flex-start;}
+}
+@media (max-width:560px){.pub .paper-layout{grid-template-columns:56px minmax(0,1fr);gap:16px;}.pub .paper-thumb{width:54px;}.pub{padding:26px 24px;}}
+@media (max-width:400px){
+  .wrap{padding:0 16px;}
+  .topnav{padding:12px 16px;}
+  .entry.wide .diagram{width:100%;height:auto;aspect-ratio:16/9;}
+  .pub{padding:22px 18px;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration:0.001ms !important;
+    animation-iteration-count:1 !important;
+    scroll-behavior:auto !important;
+  }
+}
+
+/* -- printing: a committee member printing the Background page should
+      get a clean, light CV page, not the dark chrome and watermarks -- */
+@media print{
+  body::before,body::after,.topnav,.skip-link,footer .footer-mark,.grad-wave,.rule-wave,.side-nav-btn,.scroll-top-btn{display:none !important;}
+  body{background:#fff;color:#000;}
+  a{color:#000;text-decoration:underline;}
+  .entry,.exp-item,.bg-item,.pub,.direction-list > div,.page-summary-card,.gradschool-item{box-shadow:none;border:1px solid #ccc;background:#fff;}
+  section{border-top:1px solid #ccc;}
+  .cite-block .copy-btn{display:none;}
+}
+
+/* -- page-to-page navigation: fixed arrows at the vertical middle of the
+      left and right edges, injected by site.js -- */
+.side-nav-btn{
+  position:fixed;top:50%;transform:translateY(-50%);z-index:15;
+  width:42px;height:42px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(242,240,234,0.75);border:1px solid var(--rule);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  color:var(--ink-soft);text-decoration:none;
+  transition:border-color .15s ease,color .15s ease,transform .15s ease;
+}
+html[data-theme="dark"] .side-nav-btn{background:rgba(18,17,19,0.75);}
+.side-nav-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.side-nav-btn.prev{left:18px;}
+.side-nav-btn.next{right:18px;}
+.side-nav-btn:hover{border-color:var(--amber);color:var(--amber);}
+.side-nav-btn.prev:hover{transform:translateY(-50%) translateX(-2px);}
+.side-nav-btn.next:hover{transform:translateY(-50%) translateX(2px);}
+@media (max-width:900px){
+  .side-nav-btn{width:30px;height:30px;opacity:0.6;}
+  .side-nav-btn.prev{left:4px;}
+  .side-nav-btn.next{right:4px;}
+  .side-nav-btn svg{width:12px;height:12px;}
+}
+@media (max-width:400px){
+  .side-nav-btn{width:26px;height:26px;opacity:0.5;}
+  .side-nav-btn svg{width:10px;height:10px;}
+}
+@media (hover:none) and (pointer:coarse){
+  .side-nav-btn{opacity:0.8;}
+}
+
+/* -- scroll-to-top: bottom-right, fades in once the page has scrolled -- */
+.scroll-top-btn{
+  position:fixed;right:22px;bottom:22px;z-index:16;
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--panel);border:1px solid var(--rule);
+  color:var(--ink-soft);cursor:pointer;
+  opacity:0;pointer-events:none;transform:translateY(8px);
+  transition:opacity .2s ease,transform .2s ease,border-color .15s ease,color .15s ease;
+  box-shadow:0 8px 18px -10px rgba(0,0,0,0.35);
+}
+.scroll-top-btn.visible{opacity:1;pointer-events:auto;transform:translateY(0);}
+.scroll-top-btn:hover{border-color:var(--amber);color:var(--amber);}
+.scroll-top-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+@media (max-width:760px){.scroll-top-btn{right:14px;bottom:14px;}}

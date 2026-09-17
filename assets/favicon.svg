@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <style>
+    .ring{fill:none;stroke:#6b5c42;stroke-width:1.4;}
+    .nucleus{fill:#a1702e;}
+    .satellite{fill:#7266ab;}
+    @media (prefers-color-scheme: dark){
+      .ring{stroke:#938d80;}
+      .nucleus{fill:#d9a441;}
+      .satellite{fill:#a297df;}
+    }
+  </style>
+  <circle class="nucleus" cx="12" cy="12" r="2.1"/>
+  <ellipse class="ring" cx="12" cy="12" rx="9.3" ry="4.2"/>
+  <ellipse class="ring" cx="12" cy="12" rx="9.3" ry="4.2" transform="rotate(60 12 12)"/>
+  <ellipse class="ring" cx="12" cy="12" rx="9.3" ry="4.2" transform="rotate(120 12 12)"/>
+  <circle class="satellite" cx="21.3" cy="12" r="1.6"/>
+</svg>
